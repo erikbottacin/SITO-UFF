@@ -99,9 +99,9 @@
     
             // Modifica la condizione a seconda di quando vuoi che avvenga la transizione
             if (scrollPosition > 1950) {
-              lampadinaImg.src = "/SITO UFF/png/lampadine accese.png";
+              lampadinaImg.src = "png/lampadine accese.png";
             } else {
-              lampadinaImg.src = "/SITO UFF/png/lampadine spente.png";
+              lampadinaImg.src = "png/lampadine spente.png";
             }
           });
         });
