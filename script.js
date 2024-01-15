@@ -22,12 +22,14 @@
                  
                   fatto = false;
                   anime.timeline({loop: false})
-.add({
+
+//modificare questo per velocità seconda animazione
+  .add({
   targets: '.sottotitolo .letter',
   opacity: [0,1],
   easing: "easeInOutQuad",
-  duration: 2250,
-  delay: (el, i) => 60 * (i+1)
+  duration: 1500,
+  delay: (el, i) => 40 * (i+1)
 });
                    // if we added the class, exit the function
               }
@@ -40,8 +42,28 @@
       observer1.observe(document.querySelector('.sottotitolo-wrapper'));
 
 // ANIMAZIONE TESTO "DID YOU WATCH IT CLOSELY?" 
-//var textWrapper = document.querySelector('.sottotitolo');
-//textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+let textWrapper2 = document.querySelector('.sottotitolo');
+textWrapper2.innerHTML = textWrapper2.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+// Imposta l'opacità iniziale a 0
+textWrapper2.style.opacity = 0;
+
+let animationExecuted = false; // Variabile di controllo per verificare se l'animazione è già stata eseguita
+
+let observer2 = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !animationExecuted) {
+      anime.timeline({ loop: false })
+      
+      // Imposta l'opacità finale a 1 durante l'animazione
+      textWrapper2.style.opacity = 1;
+      
+      animationExecuted = true; // Imposta la variabile di controllo a true per indicare che l'animazione è stata eseguita
+    }
+  });
+}, { threshold: 1 });
+
+observer2.observe(textWrapper2);
 
  // CAPPELLO
  const newSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
