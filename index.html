@@ -73,15 +73,23 @@
 
 <!-- TIMELINE -->
 
-<div class="barrette">
+<div class="barrette" style="margin-top: 400px;">
     <img id="image" class="barrette" src="png/movieorder.png" alt="Immagine 1" >
     
-    <div class="timeline-overlay">
+    <div class="movie-order">
+        <div><h1>MOVIE ORDER</h1></div>
+      </div>
+
+      <div class="crono-order">
+        <div><h1>CHRONOLOGICAL ORDER</h1></div>
+      </div>
+
+    <div class="timeline-overlay" style="position: relative;">
       <div class="overlay-text timeline-text">00:00:00</div>
     </div>
 
-    <div class="cibo-overlay">
-      <div class="overlay-text cibo-text">Cibo</div>
+    <div class="cibo-overlay" style="position: relative;">
+      <div class="overlay-text cibo-text"></div>
     </div>
 
   </div>
@@ -114,7 +122,7 @@
 
 <!-- DIV GRADIENTE THE PLEDGE -->
 <div style="margin-top: 100px; text-align: center; height: 160px;";>
-    <h1 class="sottotitolo" style="color: #1b2f36; font-size: 100px; display: flex; justify-content: center; text-align: center; position: relative">THE PLEDGE</h1>
+    <h1 class="sottotitolo" style="color: #1b2f36; font-size: 100px; display: flex; justify-content: center; text-align: center; position: relative"><b>THE PLEDGE</b></h1>
 </div>
 
 <!-- DIV LINEE -->
@@ -202,7 +210,10 @@
                 </svg>
                 
                 
-
+ <!-- CLUE COUNTER -->
+ <span id="clueCounter">0</span>
+ <div id="explainCounter">Spiegazioni contatore indizi</div>
+ <img id= "lente" src="png/lente.png" alt="Img lente clue counter">
 
 <!-- Collegamento al file JavaScript -->
 <script src="script.js"></script>

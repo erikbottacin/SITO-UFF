@@ -13,8 +13,18 @@ body {
 
 @font-face {
     font-family: LoewNextRegular;
-    src: url(LoewNext-Regular.otf);
-  }
+    src: url(fonts/LoewNext-Regular.otf);
+    }
+
+@font-face {
+    font-family: LoewNextLight;
+    src: url(fonts/LoewNext-Light.otf);
+    }
+
+@font-face {
+    font-family: LoewNextBold;
+    src: url(fonts/LoewNext-Bold.otf);
+    }
 
 #movingCircle {
     fill: rgb(247, 2, 2);
@@ -91,33 +101,59 @@ body {
     height: 3000px;
 }
 
-/* per larghezza div linee*/
+/* LARGHEZZA DIV LINEE*/
 .w-full {
     margin-left: -10px;
     margin-right: -10px;
 }
 
-/* animazione timeline */
+/* ANIMAZIONE TIMELINE */
+
+.movie-order {
+    position: absolute; 
+    color: white;
+    font-family: loewnextbold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.crono-order {
+    position: relative;
+ 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: loewnextbold;
+  }
 
 .barrette {
-    position: relative;
-    width: 1000px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 160px;
+    width: 1000px; /* o la larghezza desiderata */
     height: auto;
     cursor: pointer;
-    display: flex; 
-    align-items: center; 
-    justify-content: center;
-  }
+}
 
-  .timeline-overlay, .cibo-overlay {
-    top: 110px; /* Regola la distanza dal top della barra */
-    left: 50%;
+.timeline-overlay {
+top: 30px; /* Regola la distanza dal top della barra */
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.cibo-overlay {
     opacity: 0;
+    top: -12px;
     transition: opacity 0.3s;
-    margin-top: 180px;
-  }
-
-  .barrette:hover .timeline-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.barrette:hover .timeline-overlay {
     opacity: 1;
   }
 
@@ -126,6 +162,56 @@ body {
   }
 
   .overlay-text {
+    font-family: LoewNextBold;
+    font-size: 28px;
+    color: white;
+}
+
+  .cibo-text {
+    font-family: LoewNextBold;
     font-size: 28px;
     color: white;
   }
+
+  /* CLUE COUNTER */
+  /* numero */
+  #clueCounter {
+    display: none;
+    position: fixed;
+    top: 5px; /* posizione */
+    right: 25px;
+    width: 10px; /* dimensioni */
+    height: 30px;
+    padding: 8px;
+    border-radius: 50%;
+    font-size: 20px;
+    text-align: center;
+    line-height: 30px; /* uguale h contenitore */
+    z-index: 2;
+}
+
+#explainCounter {
+    display: none;
+    position: fixed;
+    background-color: lightblue;
+    top: 70px; /* posizione */
+    right: 0px;
+    width: 80px; /* dimensioni */
+    height: 100px;
+    padding: 10px;
+    border-radius: 10%;
+}
+
+#clueCounter:hover + #explainCounter,
+#explainCounter.show {
+    display: block;
+}
+
+#lente {
+  position: fixed;
+  top: 10px; /* posizione */
+  right: 20px;
+  width: 50px; /* dimensioni */
+  height: 50px;
+  z-index: 1;
+}

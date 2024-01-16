@@ -175,15 +175,15 @@ var img = document.getElementById('image');
         if (positionPercentage <= 0.45) {
           ciboOverlay.style.opacity = 1;
           timelineOverlay.style.opacity = 0;
-          ciboText.textContent = "Pledge";
+          ciboText.textContent = "The Pledge";
         } else if (positionPercentage > 0.45 && positionPercentage <= 0.69) {
           ciboOverlay.style.opacity = 1;
           timelineOverlay.style.opacity = 0;
-          ciboText.textContent = "Turn";
+          ciboText.textContent = "The Turn";
         } else if (positionPercentage > 0.69 && positionPercentage <= 1.00) {
           ciboOverlay.style.opacity = 1;
           timelineOverlay.style.opacity = 0;
-          ciboText.textContent = "Prestige";
+          ciboText.textContent = "The Prestige";
         } else {
           ciboOverlay.style.opacity = 0;
           timelineOverlay.style.opacity = 1;
@@ -254,3 +254,139 @@ window.addEventListener('scroll', function() {
       document.querySelector('.line-container').classList.remove('show-line');
   }
 });
+
+//ANIMAZIONE CLUE COUNTER
+document.addEventListener('DOMContentLoaded', function () {
+  hideClueCounter();
+});
+
+let previousScrollY;
+let currentScrollY;
+let direction;
+
+let points = [
+  { id: 1, top: 6000, visited: false, explanation: "Spiegazione clue 1" },
+  { id: 2, top: 7000, visited: false, explanation: "Spiegazione clue 2" },
+  { id: 3, top: 8000, visited: false, explanation: "Spiegazione clue 3" },
+  { id: 4, top: 9000, visited: false, explanation: "Spiegazione clue 4" },
+  // aggiungere qua i punti, top definisce a che altezza
+];
+
+let pointCounter = 0;
+
+let clueCounterVisible = false; // Aggiunta variabile per gestire la visibilità del clue counter
+
+function onScroll() {
+  const scrollTop = window.pageYOffset;
+
+  if (currentScrollY === scrollTop) return;
+
+  previousScrollY = currentScrollY;
+  currentScrollY = scrollTop;
+
+  if (!clueCounterVisible && currentScrollY >= points[0].top) {
+    showClueCounter();
+  }
+
+  if (currentScrollY > previousScrollY) {
+    direction = "down";
+    checkPoints();
+  } else if (currentScrollY < previousScrollY) {
+    direction = "up";
+    if (currentScrollY < points[0].top) {
+      hideClueCounter(); // Nasconde il clue counter se torni indietro prima del punto 1
+    } else {
+      removePoints();
+    }
+  }
+}
+
+function showClueCounter() {
+  const counterElement = document.getElementById('clueCounter');
+  const lenteElement = document.getElementById('lente');
+
+  if (counterElement && lenteElement) {
+    counterElement.style.display = 'block';
+    lenteElement.style.display = 'block';
+    clueCounterVisible = true;
+  }
+}
+
+function hideClueCounter() {
+  const counterElement = document.getElementById('clueCounter');
+  const lenteElement = document.getElementById('lente');
+
+  if (counterElement && lenteElement) {
+    counterElement.style.display = 'none';
+    lenteElement.style.display = 'none';
+    clueCounterVisible = false;
+  }
+}
+
+function checkPoints() {
+  points.forEach(point => {
+    if (!point.visited && point.top <= currentScrollY) {
+      console.log(`Point ${point.id} reached!`);
+      point.visited = true;
+      pointCounter++; // Incrementa il contatore
+      updateCounter(); // Aggiorna la visualizzazione del contatore
+    }
+  });
+}
+
+function removePoints() {
+  points.slice().reverse().forEach(point => {
+    if (point.visited && point.top > currentScrollY) {
+      console.log(`Point ${point.id} removed!`);
+      point.visited = false;
+      pointCounter--; // Decrementa il contatore
+      updateCounter(); // Aggiorna la visualizzazione del contatore
+    }
+  });
+}
+
+function updateCounter() {
+  const counterElement = document.getElementById('clueCounter');
+  const explainCounterElement = document.getElementById('explainCounter');
+
+  if (counterElement && explainCounterElement) {
+    counterElement.textContent = pointCounter.toString();
+
+    // Aggiorna il testo di #explainCounter quando un punto viene raggiunto
+    points.forEach(point => {
+      if (point.visited) {
+        explainCounterElement.textContent = point.explanation;
+      }
+    });
+
+    // Mostra #explainCounter quando il puntatore passa sopra a #clueCounter
+    counterElement.addEventListener('mouseover', function () {
+      explainCounterElement.classList.add('show');
+    });
+
+    // Nascondi #explainCounter quando il puntatore esce da #clueCounter
+    counterElement.addEventListener('mouseout', function () {
+      explainCounterElement.classList.remove('show');
+    });
+
+    // Mostra #explainCounter per 3 secondi quando pointCounter viene incrementato
+    if (pointCounter > 0) {
+      explainCounterElement.classList.add('show');
+      setTimeout(() => {
+        explainCounterElement.classList.remove('show');
+      }, 3000); // Nascondi dopo 3 secondi (3000 millisecondi)
+    } else {
+      // Nascondi #explainCounter quando pointCounter è 0
+      explainCounterElement.classList.remove('show');
+    }
+  }
+}
+
+function setupScroll() {
+  previousScrollY = 0;
+  currentScrollY = 0;
+  direction = "up";
+  document.addEventListener("scroll", onScroll);
+}
+
+setupScroll();
