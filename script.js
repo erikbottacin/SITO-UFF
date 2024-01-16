@@ -81,7 +81,7 @@ observer2.observe(textWrapper2);
  newSVG.style.position = 'absolute';
  newSVG.style.top = '1000px';
 
-
+//ANIMAZIONE PALLINA
  const movingCircle = document.getElementById('movingCircle');
  let textAnimationStarted = false;
 
@@ -127,6 +127,95 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 });
+
+//ANIMAZIONE TIMELINE
+var img = document.getElementById('image');
+    var timelineOverlay = document.querySelector('.timeline-overlay');
+    var ciboOverlay = document.querySelector('.cibo-overlay');
+    var overlayText = document.querySelector('.overlay-text');
+    var timelineText = document.querySelector('.timeline-text');
+    var ciboText = document.querySelector('.cibo-text');
+
+    var totalDuration = 2 * 60 * 60 + 10 * 60; // Tempo totale in secondi
+
+    var movieOrderSrc = "png/movieorder.png";
+    var cronOrderSrc = "png/cronorder.png";
+    var currentSrc = movieOrderSrc;
+
+    img.addEventListener('mouseenter', function() {
+      if (currentSrc === movieOrderSrc) {
+        timelineOverlay.style.opacity = 1;
+        ciboOverlay.style.opacity = 0;
+      } else if (currentSrc === cronOrderSrc) {
+        ciboOverlay.style.opacity = 1;
+        timelineOverlay.style.opacity = 0;
+      }
+    });
+
+    img.addEventListener('mouseleave', function() {
+      timelineOverlay.style.opacity = 0;
+      ciboOverlay.style.opacity = 0;
+    });
+
+    img.addEventListener('mousemove', function(event) {
+      var rect = img.getBoundingClientRect();
+      var mouseX = event.clientX - rect.left;
+      var positionPercentage = mouseX / rect.width;
+
+      if (currentSrc === movieOrderSrc) {
+        var percentage = mouseX / rect.width;
+        var currentTime = Math.round(percentage * totalDuration);
+
+        var hours = Math.floor(currentTime / 3600);
+        var minutes = Math.floor((currentTime % 3600) / 60);
+        var seconds = currentTime % 60;
+
+        timelineText.textContent = pad(hours) + ':' + pad(minutes) + ':' + pad(seconds);
+      } else if (currentSrc === cronOrderSrc) {
+        if (positionPercentage <= 0.45) {
+          ciboOverlay.style.opacity = 1;
+          timelineOverlay.style.opacity = 0;
+          ciboText.textContent = "Pledge";
+        } else if (positionPercentage > 0.45 && positionPercentage <= 0.69) {
+          ciboOverlay.style.opacity = 1;
+          timelineOverlay.style.opacity = 0;
+          ciboText.textContent = "Turn";
+        } else if (positionPercentage > 0.69 && positionPercentage <= 1.00) {
+          ciboOverlay.style.opacity = 1;
+          timelineOverlay.style.opacity = 0;
+          ciboText.textContent = "Prestige";
+        } else {
+          ciboOverlay.style.opacity = 0;
+          timelineOverlay.style.opacity = 1;
+        }
+      }
+    });
+
+    img.addEventListener('click', function() {
+      if (currentSrc === movieOrderSrc) {
+        img.src = cronOrderSrc;
+        currentSrc = cronOrderSrc;
+      } else {
+        img.src = movieOrderSrc;
+        currentSrc = movieOrderSrc;
+      }
+
+      timelineText.textContent = "00:00:00";
+      timelineOverlay.style.opacity = 0;
+      ciboOverlay.style.opacity = 0;
+
+      setTimeout(function() {
+        if (currentSrc === movieOrderSrc) {
+          timelineOverlay.style.opacity = 1;
+        } else if (currentSrc === cronOrderSrc) {
+          ciboOverlay.style.opacity = 1;
+        }
+      }, 10);
+    });
+
+    function pad(num) {
+      return num < 10 ? '0' + num : num;
+    }
 
 //ANIMAZIONE LINEE
 window.addEventListener('scroll', function() {

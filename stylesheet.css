@@ -96,3 +96,36 @@ body {
     margin-left: -10px;
     margin-right: -10px;
 }
+
+/* animazione timeline */
+
+.barrette {
+    position: relative;
+    width: 1000px;
+    height: auto;
+    cursor: pointer;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+  }
+
+  .timeline-overlay, .cibo-overlay {
+    top: 110px; /* Regola la distanza dal top della barra */
+    left: 50%;
+    opacity: 0;
+    transition: opacity 0.3s;
+    margin-top: 180px;
+  }
+
+  .barrette:hover .timeline-overlay {
+    opacity: 1;
+  }
+
+  .barrette:hover .cibo-overlay {
+    opacity: 1;
+  }
+
+  .overlay-text {
+    font-size: 28px;
+    color: white;
+  }
