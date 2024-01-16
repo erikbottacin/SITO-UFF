@@ -2,6 +2,11 @@ body {
     background-color: black;
 }
 
+@font-face {
+    font-family: LoewNextRegular;
+    src: url(LoewNext-Regular.otf);
+  }
+
 #movingCircle {
     fill: rgb(247, 2, 2);
     transform-origin: center;
@@ -13,7 +18,7 @@ body {
     font-weight: 100;
     font-size: 100px;
     color: white;
-    font-family: 'LoewNext-Regular';
+    font-family: LoewNextRegular;
     line-height: 1.5;
 }
 
@@ -21,7 +26,7 @@ body {
     font-weight: 100;
     font-size: 50px;
     color: white;
-    font-family: 'LoewNext-Regular';
+    font-family: LoewNextRegular;
     line-height: 1.5;
 }
 
@@ -29,15 +34,15 @@ body {
     font-weight: 100;
     font-size: 45px;
     color: white;
-    font-family: 'LoewNext-Regular';
+    font-family: LoewNextRegular;
     line-height: 1.5;
 }
 
 .aboutmovie {
-    font-weight: 100;
     font-size: 50px;
     color: white;
-    font-family: 'LoewNext-Bold';
+    font-family: LoewNextRegular;
+    font-weight: 600;
     line-height: 1.3;
     margin-top:900px;
     text-align: center;
@@ -47,7 +52,7 @@ body {
     font-weight: 100;
     font-size: 25px;
     color: white;
-    font-family: 'LoewNext-Regular';
+    font-family: LoewNextRegular;
     line-height: 1.3;
     margin-top:50px;
     text-align: center;
@@ -57,21 +62,24 @@ body {
     font-weight: 100;
     font-size: 30px;
     color: white;
-    font-family: 'LoewNext-Regular';
+    font-family: LoewNextRegular;
     line-height: 1.3;
     margin-top:50px;
     text-align: center;
 }
 
 .aboutwebsite {
-    font-weight: 100;
+    font-weight: 600;
     font-size: 50px;
     color: white;
-    font-family: 'LoewNext-Bold';
+    font-family: LoewNextRegular;
     line-height: 1.3;
     margin-top:300px;
     text-align: center;
 }
 
+.spazio {
+    height: 3000px;
+}
 
 

@@ -91,26 +91,28 @@
 
 
 //ANIMAZIONE LAMPADINE
-        document.addEventListener("DOMContentLoaded", function() {
-          var lampadinaImg = document.getElementById("lampadinaImg");
-    
-          window.addEventListener("scroll", function() {
-            var scrollPosition = window.scrollY;
-    
-            // Modifica la condizione a seconda di quando vuoi che avvenga la transizione
-            if (scrollPosition > 1950) {
-              lampadinaImg.src = "/SITO UFF/png/lampadine accese.png";
-            } else {
-              lampadinaImg.src = "/SITO UFF/png/lampadine spente.png";
-            }
-          });
-        });
+document.addEventListener("DOMContentLoaded", function() {
+  var lampadinaImg = document.getElementById("lampadinaImg");
+
+  window.addEventListener("scroll", function() {
+    var scrollPosition = window.scrollY;
+
+    // Modifica la condizione a seconda di quando vuoi che avvenga la transizione
+    if (scrollPosition > 1950) {
+      lampadinaImg.src = "png/lampadine accese.png";
+    } else {
+      lampadinaImg.src = "png/lampadine spente.png";
+    }
+  });
+});
 
 //ANIMAZIONE LINEE
 window.addEventListener('scroll', function() {
+
+  let lineContainer = document.querySelector('.line-container');
+  let startPosition = lineContainer.offsetTop;
+  let pageHeight = document.documentElement.scrollHeight;
   let scrollPosition = window.scrollY;
-  let pageHeight = 10354; // Modifica il valore in base all'altezza totale della tua pagina
-  let startPosition = 4462; // Imposta la posizione di partenza desiderata
 
   if (scrollPosition >= startPosition) {
       // Il tuo codice da eseguire quando lo scroll raggiunge la posizione desiderata
