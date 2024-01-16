@@ -109,33 +109,38 @@ body {
 
 /* ANIMAZIONE TIMELINE */
 
+.movie-order,
+.crono-order {
+  position: absolute;
+  top: 3570px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-family: loewnextbold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .movie-order {
-    position: absolute; 
-    color: white;
-    font-family: loewnextbold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  z-index: 1;
 }
 
 .crono-order {
-    position: relative;
- 
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-family: loewnextbold;
-  }
+  z-index: 2;
+  opacity: 0;
+}
 
 .barrette {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 160px;
-    width: 1000px; /* o la larghezza desiderata */
-    height: auto;
-    cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 160px;
+  width: 1000px; /* o la larghezza desiderata */
+  height: auto;
+  cursor: pointer;
 }
+
 
 .timeline-overlay {
 top: 30px; /* Regola la distanza dal top della barra */

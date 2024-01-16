@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var scrollPosition = window.scrollY;
 
     // Modifica la condizione a seconda di quando vuoi che avvenga la transizione
-    if (scrollPosition > 1950) {
+    if (scrollPosition > 2000) {
       lampadinaImg.src = "png/lampadine accese.png";
     } else {
       lampadinaImg.src = "png/lampadine spente.png";
@@ -130,92 +130,99 @@ document.addEventListener("DOMContentLoaded", function() {
 
 //ANIMAZIONE TIMELINE
 var img = document.getElementById('image');
-    var timelineOverlay = document.querySelector('.timeline-overlay');
-    var ciboOverlay = document.querySelector('.cibo-overlay');
-    var overlayText = document.querySelector('.overlay-text');
-    var timelineText = document.querySelector('.timeline-text');
-    var ciboText = document.querySelector('.cibo-text');
+var timelineOverlay = document.querySelector('.timeline-overlay');
+var ciboOverlay = document.querySelector('.cibo-overlay');
+var overlayText = document.querySelector('.overlay-text');
+var timelineText = document.querySelector('.timeline-text');
+var ciboText = document.querySelector('.cibo-text');
+var movieOrderText = document.querySelector('.movie-order');
+var cronoOrderText = document.querySelector('.crono-order');
 
-    var totalDuration = 2 * 60 * 60 + 10 * 60; // Tempo totale in secondi
+var totalDuration = 2 * 60 * 60 + 10 * 60; // Tempo totale in secondi
 
-    var movieOrderSrc = "png/movieorder.png";
-    var cronOrderSrc = "png/cronorder.png";
-    var currentSrc = movieOrderSrc;
+var movieOrderSrc = "png/movieorder.png";
+var cronOrderSrc = "png/cronorder.png";
+var currentSrc = movieOrderSrc;
+var currentText = movieOrderText;
 
-    img.addEventListener('mouseenter', function() {
-      if (currentSrc === movieOrderSrc) {
-        timelineOverlay.style.opacity = 1;
-        ciboOverlay.style.opacity = 0;
-      } else if (currentSrc === cronOrderSrc) {
-        ciboOverlay.style.opacity = 1;
-        timelineOverlay.style.opacity = 0;
-      }
-    });
+img.addEventListener('mouseenter', function() {
+  if (currentSrc === movieOrderSrc) {
+    timelineOverlay.style.opacity = 1;
+    ciboOverlay.style.opacity = 0;
+  } else if (currentSrc === cronOrderSrc) {
+    ciboOverlay.style.opacity = 1;
+    timelineOverlay.style.opacity = 0;
+  }
+});
 
-    img.addEventListener('mouseleave', function() {
+img.addEventListener('mouseleave', function() {
+  timelineOverlay.style.opacity = 0;
+  ciboOverlay.style.opacity = 0;
+});
+
+img.addEventListener('mousemove', function(event) {
+  var rect = img.getBoundingClientRect();
+  var mouseX = event.clientX - rect.left;
+  var positionPercentage = mouseX / rect.width;
+
+  if (currentSrc === movieOrderSrc) {
+    var percentage = mouseX / rect.width;
+    var currentTime = Math.round(percentage * totalDuration);
+
+    var hours = Math.floor(currentTime / 3600);
+    var minutes = Math.floor((currentTime % 3600) / 60);
+    var seconds = currentTime % 60;
+
+    timelineText.textContent = pad(hours) + ':' + pad(minutes) + ':' + pad(seconds);
+  } else if (currentSrc === cronOrderSrc) {
+    if (positionPercentage <= 0.45) {
+      ciboOverlay.style.opacity = 1;
       timelineOverlay.style.opacity = 0;
-      ciboOverlay.style.opacity = 0;
-    });
-
-    img.addEventListener('mousemove', function(event) {
-      var rect = img.getBoundingClientRect();
-      var mouseX = event.clientX - rect.left;
-      var positionPercentage = mouseX / rect.width;
-
-      if (currentSrc === movieOrderSrc) {
-        var percentage = mouseX / rect.width;
-        var currentTime = Math.round(percentage * totalDuration);
-
-        var hours = Math.floor(currentTime / 3600);
-        var minutes = Math.floor((currentTime % 3600) / 60);
-        var seconds = currentTime % 60;
-
-        timelineText.textContent = pad(hours) + ':' + pad(minutes) + ':' + pad(seconds);
-      } else if (currentSrc === cronOrderSrc) {
-        if (positionPercentage <= 0.45) {
-          ciboOverlay.style.opacity = 1;
-          timelineOverlay.style.opacity = 0;
-          ciboText.textContent = "The Pledge";
-        } else if (positionPercentage > 0.45 && positionPercentage <= 0.69) {
-          ciboOverlay.style.opacity = 1;
-          timelineOverlay.style.opacity = 0;
-          ciboText.textContent = "The Turn";
-        } else if (positionPercentage > 0.69 && positionPercentage <= 1.00) {
-          ciboOverlay.style.opacity = 1;
-          timelineOverlay.style.opacity = 0;
-          ciboText.textContent = "The Prestige";
-        } else {
-          ciboOverlay.style.opacity = 0;
-          timelineOverlay.style.opacity = 1;
-        }
-      }
-    });
-
-    img.addEventListener('click', function() {
-      if (currentSrc === movieOrderSrc) {
-        img.src = cronOrderSrc;
-        currentSrc = cronOrderSrc;
-      } else {
-        img.src = movieOrderSrc;
-        currentSrc = movieOrderSrc;
-      }
-
-      timelineText.textContent = "00:00:00";
+      ciboText.textContent = "The Pledge";
+    } else if (positionPercentage > 0.45 && positionPercentage <= 0.69) {
+      ciboOverlay.style.opacity = 1;
       timelineOverlay.style.opacity = 0;
+      ciboText.textContent = "The Turn";
+    } else if (positionPercentage > 0.69 && positionPercentage <= 1.00) {
+      ciboOverlay.style.opacity = 1;
+      timelineOverlay.style.opacity = 0;
+      ciboText.textContent = "The Prestige";
+    } else {
       ciboOverlay.style.opacity = 0;
-
-      setTimeout(function() {
-        if (currentSrc === movieOrderSrc) {
-          timelineOverlay.style.opacity = 1;
-        } else if (currentSrc === cronOrderSrc) {
-          ciboOverlay.style.opacity = 1;
-        }
-      }, 10);
-    });
-
-    function pad(num) {
-      return num < 10 ? '0' + num : num;
+      timelineOverlay.style.opacity = 1;
     }
+  }
+});
+
+img.addEventListener('click', function() {
+  if (currentSrc === movieOrderSrc) {
+    img.src = cronOrderSrc;
+    currentSrc = cronOrderSrc;
+    currentText.style.opacity = 0;
+    cronoOrderText.style.opacity = 1;
+    currentText = cronoOrderText;
+    timelineOverlay.style.opacity = 0;
+  } else {
+    img.src = movieOrderSrc;
+    currentSrc = movieOrderSrc;
+    currentText.style.opacity = 0;
+    movieOrderText.style.opacity = 1;
+    currentText = movieOrderText;
+    ciboOverlay.style.opacity = 0;
+  }
+
+  timelineText.textContent = "00:00:00";
+
+  if (currentSrc === movieOrderSrc) {
+    timelineOverlay.style.opacity = 1;
+  } else if (currentSrc === cronOrderSrc) {
+    ciboOverlay.style.opacity = 1;
+  }
+});
+
+function pad(num) {
+  return num < 10 ? '0' + num : num;
+}
 
 //ANIMAZIONE LINEE
 window.addEventListener('scroll', function() {
