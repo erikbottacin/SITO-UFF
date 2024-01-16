@@ -113,7 +113,6 @@ observer2.observe(textWrapper2);
 
 
 //ANIMAZIONE LAMPADINE
-<<<<<<< HEAD
 document.addEventListener("DOMContentLoaded", function() {
   var lampadinaImg = document.getElementById("lampadinaImg");
 
@@ -128,22 +127,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 });
-=======
-        document.addEventListener("DOMContentLoaded", function() {
-          var lampadinaImg = document.getElementById("lampadinaImg");
-    
-          window.addEventListener("scroll", function() {
-            var scrollPosition = window.scrollY;
-    
-            // Modifica la condizione a seconda di quando vuoi che avvenga la transizione
-            if (scrollPosition > 1950) {
-              lampadinaImg.src = "png/lampadine accese.png";
-            } else {
-              lampadinaImg.src = "png/lampadine spente.png";
-            }
-          });
-        });
->>>>>>> 39cbf8eeb708bb0476f05eb7cad449fba3077693
 
 //ANIMAZIONE LINEE
 window.addEventListener('scroll', function() {
