@@ -111,6 +111,23 @@ observer2.observe(textWrapper2);
 
  window.onscroll = updateCirclePosition;
 
+//ANIMAZIONE TESTI PARAGRAFI PARTE INIZIALE
+const paragraphs = document.querySelectorAll(".section__paragraph, .header__text");
+
+document.addEventListener("scroll", function() {
+    paragraphs.forEach((paragraph) => {
+        if (isInView(paragraph)) {
+            paragraph.classList.add("section__paragraph--visible");
+        }
+    });
+});
+
+function isInView(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.bottom > 0 && rect.top < (window.innerHeight - 150 || document.documentElement.clientHeight - 150)
+    );
+}
 
 //ANIMAZIONE LAMPADINE
 document.addEventListener("DOMContentLoaded", function() {

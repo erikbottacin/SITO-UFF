@@ -11,6 +11,7 @@ body {
     overflow-x: hidden;
 }
 
+/* COLLEGAMENTO FONTS */
 @font-face {
     font-family: LoewNextRegular;
     src: url(fonts/LoewNext-Regular.otf);
@@ -26,79 +27,102 @@ body {
     src: url(fonts/LoewNext-Bold.otf);
     }
 
+/* TESTI */
+    .titolo {
+        font-weight: 100;
+        font-size: 100px;
+        color: white;
+        font-family: LoewNextRegular;
+        line-height: 1.5;
+    }
+    
+    .sottotitolo {
+        font-weight: 100;
+        font-size: 50px;
+        color: white;
+        font-family: LoewNextRegular;
+        line-height: 1.5;
+    }
+    
+    .sottotitolo1 {
+        font-weight: 100;
+        font-size: 45px;
+        color: white;
+        font-family: LoewNextRegular;
+        line-height: 1.5;
+    }
+    
+    .aboutmovie {
+        font-size: 50px;
+        color: white;
+        font-family: LoewNextRegular;
+        font-weight: 600;
+        line-height: 1.3;
+        margin-top:900px;
+        text-align: center;
+    }
+    
+    .specifiche {
+        font-weight: 100;
+        font-size: 25px;
+        color: white;
+        font-family: LoewNextRegular;
+        line-height: 1.3;
+        margin-top:50px;
+        text-align: center;
+    }
+    
+    .trama {
+        font-weight: 100;
+        font-size: 30px;
+        color: white;
+        font-family: LoewNextRegular;
+        line-height: 1.3;
+        margin-top:50px;
+        text-align: center;
+    }
+    
+    .aboutwebsite {
+        font-weight: 600;
+        font-size: 50px;
+        color: white;
+        font-family: LoewNextRegular;
+        line-height: 1.3;
+        margin-top:300px;
+        text-align: center;
+    }
+    
+    .spazio {
+        height: 3000px;
+    }
+    
+    .header__text {
+        opacity: 0;
+        transition: 0.5s ease;
+    }
+
+   .header__text--visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.section__paragraph {
+    transform: translateY(20px);
+    opacity: 0;
+    transition: 1s ease;
+}
+
+.section__paragraph--visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* STILE CERCHIO*/
 #movingCircle {
     fill: rgb(247, 2, 2);
     transform-origin: center;
     transform-box: fill-box;
 
-}
-
-.titolo {
-    font-weight: 100;
-    font-size: 100px;
-    color: white;
-    font-family: LoewNextRegular;
-    line-height: 1.5;
-}
-
-.sottotitolo {
-    font-weight: 100;
-    font-size: 50px;
-    color: white;
-    font-family: LoewNextRegular;
-    line-height: 1.5;
-}
-
-.sottotitolo1 {
-    font-weight: 100;
-    font-size: 45px;
-    color: white;
-    font-family: LoewNextRegular;
-    line-height: 1.5;
-}
-
-.aboutmovie {
-    font-size: 50px;
-    color: white;
-    font-family: LoewNextRegular;
-    font-weight: 600;
-    line-height: 1.3;
-    margin-top:900px;
-    text-align: center;
-}
-
-.specifiche {
-    font-weight: 100;
-    font-size: 25px;
-    color: white;
-    font-family: LoewNextRegular;
-    line-height: 1.3;
-    margin-top:50px;
-    text-align: center;
-}
-
-.trama {
-    font-weight: 100;
-    font-size: 30px;
-    color: white;
-    font-family: LoewNextRegular;
-    line-height: 1.3;
-    margin-top:50px;
-    text-align: center;
-}
-
-.aboutwebsite {
-    font-weight: 600;
-    font-size: 50px;
-    color: white;
-    font-family: LoewNextRegular;
-    line-height: 1.3;
-    margin-top:300px;
-    text-align: center;
-}
-
-.spazio {
-    height: 3000px;
 }
 
 /* LARGHEZZA DIV LINEE*/
