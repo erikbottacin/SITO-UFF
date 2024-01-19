@@ -228,6 +228,22 @@ align-items: center;
 }
 
 
+/* RETTANGOLO MASCHERA LINEE */
+
+.rectangular-box {
+    
+    width: 100%;
+    height: 35%;
+    background-color: #2891A7;
+    position: fixed;
+    bottom: 0;
+    left: -10px;
+    z-index: 2;
+    filter: blur(10px);
+    margin-bottom: -10px;
+  } 
+
+
 .redtx {
     position: absolute;
      font-family: LoewNextBold;

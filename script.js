@@ -279,6 +279,28 @@ function pad(num) {
 //   }
 // });
 
+//ANIMAZIONE RETTANGOLO MASCHERA
+// document.addEventListener("scroll", function() {
+//   var triggerPoint = 4400;
+//   var rectangularBox = document.querySelector(".rectangular-box");
+  
+//   // Modifica la posizione del rettangolo basata sulla posizione dello scroll
+//   rectangularBox.style.bottom = scrollPosition + "px";
+
+//   if (scrollPosition > triggerPoint) {
+//     conditionalRectangle.classList.add("show");
+//   } else {
+//     conditionalRectangle.classList.remove("show");
+//   }});
+
+// window.addEventListener('scroll', function() {
+//   const scrollY = window.scrollY;
+//   const scrollPercentage = scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+//   const newHeight = 143 + (9812 - 143) * scrollPercentage; // replace 143 and 9812 with the initial and final heights
+//   document.getElementById('maskRect').setAttribute('height', newHeight);
+// });
+
+
 //ANIMAZIONE CLUE COUNTER
 document.addEventListener('DOMContentLoaded', function () {
   hideClueCounter();
