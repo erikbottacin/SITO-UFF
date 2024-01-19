@@ -241,43 +241,43 @@ function pad(num) {
   return num < 10 ? '0' + num : num;
 }
 
-//ANIMAZIONE LINEE
-window.addEventListener('scroll', function() {
-  let lineContainer = document.querySelector('.line-container');
-  let startPosition = lineContainer.offsetTop;
-  let pageHeight = document.documentElement.scrollHeight;
-  let scrollPosition = window.scrollY;
+// VECCHIA ANIMAZIONE LINEE
+// window.addEventListener('scroll', function() {
+//   let lineContainer = document.querySelector('.line-container');
+//   let startPosition = lineContainer.offsetTop;
+//   let pageHeight = document.documentElement.scrollHeight;
+//   let scrollPosition = window.scrollY;
 
-  let paths = document.querySelectorAll('svg path');
+//   let paths = document.querySelectorAll('svg path');
 
-  paths.forEach((path) => {
-      let pathLength = path.getTotalLength();
-      path.style.strokeDasharray = pathLength + ' ' + pathLength;
-      path.style.strokeDashoffset = pathLength;
+//   paths.forEach((path) => {
+//       let pathLength = path.getTotalLength();
+//       path.style.strokeDasharray = pathLength + ' ' + pathLength;
+//       path.style.strokeDashoffset = pathLength;
 
-      if (scrollPosition >= startPosition) {
-          // Il tuo codice da eseguire quando lo scroll raggiunge la posizione desiderata
+//       if (scrollPosition >= startPosition) {
+//           // Il tuo codice da eseguire quando lo scroll raggiunge la posizione desiderata
 
-          // Calcola la percentuale di completamento del disegno
-          let scrollPercentage = Math.min(1, (scrollPosition - startPosition) / (pageHeight - startPosition));
+//           // Calcola la percentuale di completamento del disegno
+//           let scrollPercentage = Math.min(1, (scrollPosition - startPosition) / (pageHeight - startPosition));
 
-          // Riduci la velocità regolando il valore seguente
-          let drawLength = pathLength * scrollPercentage; // Puoi regolare il divisore per controllare la velocità
+//           // Riduci la velocità regolando il valore seguente
+//           let drawLength = pathLength * scrollPercentage; // Puoi regolare il divisore per controllare la velocità
 
-          // Disegna il tratto
-          path.style.strokeDashoffset = pathLength - drawLength;
-      } else {
-          // Il tuo codice da eseguire quando lo scroll è al di sopra della posizione desiderata
-          path.style.strokeDashoffset = pathLength;
-      }
-  });
+//           // Disegna il tratto
+//           path.style.strokeDashoffset = pathLength - drawLength;
+//       } else {
+//           // Il tuo codice da eseguire quando lo scroll è al di sopra della posizione desiderata
+//           path.style.strokeDashoffset = pathLength;
+//       }
+//   });
 
-  if (scrollPosition >= startPosition) {
-      document.querySelector('.line-container').classList.add('show-line');
-  } else {
-      document.querySelector('.line-container').classList.remove('show-line');
-  }
-});
+//   if (scrollPosition >= startPosition) {
+//       document.querySelector('.line-container').classList.add('show-line');
+//   } else {
+//       document.querySelector('.line-container').classList.remove('show-line');
+//   }
+// });
 
 //ANIMAZIONE CLUE COUNTER
 document.addEventListener('DOMContentLoaded', function () {

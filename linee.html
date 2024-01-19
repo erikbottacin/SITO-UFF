@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prova maschera</title>
+</head>
+<body>
+
+<div id="svg" style="width: 100%;">
+    <div style="position: relative;">
+        <img id="linee" src="png/SEMPLIFICATO sfondo.svg" style="width: 100%; z-index: 1;">
+        <img id="linee" src="png/SEMPLIFICATO senza sfondo.svg" style="width: 100%; position: absolute; top: 0; left: 0; z-index: 2;">
+    
+    </div>
+
+</div>
+    
+<script>
+    window.addEventListener('scroll', function() {
+        const scrollY = window.scrollY;
+        const scrollPercentage = scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+        const newHeight = 143 + (9812 - 143) * scrollPercentage; // replace 143 and 9812 with the initial and final heights
+        document.getElementById('maskRect').setAttribute('height', newHeight);
+    });
+</script>
+
+</body>
+</html>
+
