@@ -76,12 +76,15 @@ style="position: absolute; margin-top: 1200px; left:50%; transform: translate(-5
 
  <div class="switch">
  <h1 class="switch__text , header__text"> 
- Click and hover on the timeline to switch and see order of events </h1>
+  Here's a visual representation of movie scenes. <br> Each color represents an act,<br> 
+  just as the three acts of a magic trick.<br> 
+ <br><br>
+  <b class="click">Click on the bar to rearrange the scenes</b> </h1>
  </div>
 
 
 <!-- TIMELINE -->
-<div class="barrette" style="margin-top: 400px;">
+<div class="barrette" style="margin-top: 500px;">
     <img id="image" class="barrette" src="png/movieorder.png" alt="Immagine 1">
     
     <div class="movie-order">
@@ -96,44 +99,30 @@ style="position: absolute; margin-top: 1200px; left:50%; transform: translate(-5
       <div class="overlay-text timeline-text">00:00:00</div>
     </div>
   
-    <div class="cibo-overlay" style="position: relative;">
+    <div class="cibo-overlay" style="position: relative">
       <div class="overlay-text cibo-text"></div>
     </div>
   </div>
-  
-<!-- barre statiche 
-<div style="margin-top: 400px; text-align: center;";>
-    <h1 class="sottotitolo"> MOVIE ORDER </h1>
-</div>
 
-<div style=" margin-top: 20px; display: flex; align-items: center; justify-content: center;";>
-    <img src="png/barra1.jpg" style="width: 80%">
-</div>
+<!-- DIV SPIEGONE -->
+<div class="spiegone">
+    <img id="spiegone" src="png/spiegone.svg" style="position: absolute; z-index: 999; scale: 60%; right: -260px; top: 3600px;" alt="spiegone">
+</div>>
 
-<div style="margin-top: 50px; text-align: center;";>
-    <h1 class="sottotitolo"> CHRONOLOGICAL ORDER</h1>
-</div>
-
-<div style="margin-top: 20px; display: flex; align-items: center; justify-content: center;";>
-    <img src="png/barra2.jpg" style="width: 80%;">
-</div> -->
-
-<!-- DIV GRADIENTE - EVERY MAGIC TRICK-->
- <div style=" background: linear-gradient(#000000,#2791a7); height: 1100px; width: 100%; margin-top: 50px; position: absolute;"> 
- <h1 class="sottotitolo , header__text" 
- style=" display: flex; justify-content: center; text-align: center; margin-top: 350px; position: absoulte; font-weight: 800;
- font-size: 40px;">
- FOLLOW THE CHARACTERS IN CHRONOLOGICAL ORDER </h1>
-</div>  
+<!-- DIV GRADIENTE-->
+ <div style=" background: linear-gradient(#000000,#2791a7); height: 1090px; width: 100%; margin-top: 50px; position: absolute;"> 
+ </div>  
 
 
 <div style="margin-top: 835px; text-align: center;";>
-    <h1 class="sottotitolo , header__text" style="color: #1b2f36; position: relative; font-size: 30px;"> EVERY MAGIC TRICK CONSISTS OF THREE ACTS... </h1>
+    <h1 class="sottotitolo , header__text" style="color: #1b2f36; position: relative; font-size: 30px; opacity: 0;"> EVERY MAGIC TRICK CONSISTS OF THREE ACTS... </h1>
 </div>
 
-<!-- DIV GRADIENTE THE PLEDGE -->
+<!-- DIV THE PLEDGE + THE TURN + THE PRESTIGE-->
 <div style="margin-top: 100px; text-align: center; height: 160px;";>
-    <h1 class="sottotitolo , header__text" style="color: #1b2f36; font-size: 100px; display: flex; justify-content: center; text-align: center; position: relative"><b>THE PLEDGE</b></h1>
+    <h1 class="header__text , the_pledge "><b>THE PLEDGE</b></h1>
+    <h1 class="header__text , the_pledge " style="position: absolute; z-index: 999; margin-top: 1247vw; margin-left: 59vw"><b>THE TURN</b></h1>
+    <h1 class="header__text , the_pledge " style="position: absolute; z-index: 999; margin-top: 1850vw; margin-left: 39.5vw; "><b>THE PRESTIGE</b></h1>
 </div>
 
 <!-- DIV LINEE -->
@@ -141,81 +130,69 @@ style="position: absolute; margin-top: 1200px; left:50%; transform: translate(-5
 
 <div id="path-container" class="container">
   <div class="line-container w-full" >
+</div>
+
+<div class="container"style="position: absolute;">
+    <div class="text-container" >
+      <p class="whitetx , section__paragraph" id="tx1" style="margin-top: 63.208vw; margin-left: 38vw; text-align: center;"> <b class="julia">JULIA</b> DROWNS IN <br> THE WATER TANK </p>
+      <p class="whitetx , section__paragraph" id="tx2" style="margin-top: 105vw; margin-left: 37vw;"> <b class="julia">JULIA</b>'S FUNERAL</p>
+      <p class="whitetx , section__paragraph" id="tx4" style="margin-top: 168vw; margin-left: 5vw; text-align: center;"><b class="sarah">SARAH</b> AND <br> <b class="ALFRED">ALFRED</b> <br>  MEET FOR THE <br>FIRST TIME</p>
+      <p class="whitetx , section__paragraph" id="tx5" style="margin-top: 199.5vw; margin-left: 5vw; text-align: center;"> <b class="freddie">FREDDIE</b> SWAPS <br>WITH <b class="ALFRED">ALFRED</b> AT <br> <b class="sarah">SARAH</b>'S</p>
+      <p class="whitetx , section__paragraph" id="tx7" style="margin-top: 244vw; margin-left: 7vw; text-align: center;"> <b class="sarah">SARAH</b> TELLS  <br> <b class="freddie">FREDDIE</b> SHE'S  <br> PREGNANT</p>
+      <p class="whitetx , section__paragraph" id="tx8" style="margin-top: 300.7vw; margin-left: 20vw; text-align: center;"><b class="angier">ANGIER</b> GOES TO <br><b class="ALFRED">ALFRED</b>'S PERFORMANCE <br>AND SHOOTS HIS HAND</p>
+      <p class="whitetx , section__paragraph" id="tx9" style="margin-top: 365.5vw; margin-left: 23vw; text-align: center;"><b class="freddie">FREDDIE</b> CUTS OFF <br><b class="ALFRED">ALFRED</b>'S FINGERS</p>
+      <p class="whitetx , section__paragraph" id="tx10" style="margin-top: 428vw; margin-left: 55vw; text-align: center;"><b class="olivia">OLIVIA</b> AND <b class="angier">ANGIER</b> <br> MEET FOR THE FIRST TIME<br>THANKS TO <b class="cutter">CUTTER</b></p>
+      <p class="whitetx , section__paragraph" id="tx11" style="margin-top: 502vw; margin-left: 30vw; text-align: center;"><b class="ALFRED">ALFRED</b> GOES TO <br><b class="angier">ANGIER</b>'S <br>PERFORMANCE <br>TO SABOTAGE HIM</p>
+      <p class="whitetx , section__paragraph" id="tx12" style="margin-top: 556vw; margin-left: 38vw; text-align: center;"><b class="freddie">FREDDIE</b> AND <br> <b class="angier">ANGIER</b> GO <br> TO SEE <b class="tesla">TESLA</b>'S <br> INVENTION</p>
+      <p class="whitetx , section__paragraph" id="tx13" style="margin-top: 621vw; margin-left: 3vw; text-align: center;"><b class="angier">ANGIER</b> FOLLOWS <br><b class="ALFRED">ALFRED</b>, JEALOUS <br>OF HIS LOVELY <br>LIFE WITH <b class="sarah">SARAH</b></p>
+      <p class="whitetx , section__paragraph" id="tx15" style="margin-top: 680vw; margin-left: 21vw; text-align: center;"><b class="angier">ANGIER</b> GOES TO <br><b class="borden">BORDEN</b>'S "THE ORIGINAL <br>TRANSPORTED MAN" <br>PERFORMANCE WITH <br> <b class="olivia">OLIVIA</b></p>
+      <p class="whitetx , section__paragraph" id="tx16" style="margin-top: 752vw; margin-left: 20vw; text-align: center;"><b class="cutter">CUTTER</b> GOES TO <br> THE SAME<br>PERFORMANCE</p>
+      <p class="whitetx , section__paragraph" id="tx18" style="margin-top: 826vw; margin-left: 6vw; text-align: center;"><b class="ALFRED">ALFRED</b> SURPRISES <br><b class="sarah">SARAH</b> WITH A NEW <br>HOUSE</p>
+      <p class="whitetx , section__paragraph" id="tx20" style="margin-top: 823vw; margin-left: 60vw; text-align: center;"><b class="cutter">CUTTER</b> FINDS <br> <b class="angier">ANGIER</b>'S DOUBLE</p>
+      <p class="whitetx , section__paragraph" id="tx22" style="margin-top: 888vw; margin-left: 50vw; text-align: center;"><b class="angier">ANGIER</b> AND <b class="root">ROOT</b><br>PERFORM "THE NEW <br>TRANSPORTED MAN"</p>
+      <p class="whitetx , section__paragraph" id="tx23" style="margin-top: 934vw; margin-left: 23vw; text-align: center;"><b class="olivia">OLIVIA</b> BETRAYS <b class="angier">ANGIER</b><br> AND GOES TO THE <br> <b class="borden">BORDENS</b> </p>
+      <p class="whitetx , section__paragraph" id="tx24" style="margin-top: 995vw; margin-left: 53vw; text-align: center;"><b class="ALFRED">ALFRED</b> <br>CONVINCES <br><b class="root">ROOT</b> TO <br>REBEL </p>
+      <p class="whitetx , section__paragraph" id="tx25" style="margin-top: 1028vw; margin-left: 39vw; text-align: center;"><b class="root">ROOT</b> LEAVES DURING <br>THE SHOW AND <br><b class="ALFRED">ALFRED</b> TAKES HIS <br>PLACE, BREAKING <br><b class="angier">ANGIER</b>'S LEG </p>
+      <p class="whitetx , section__paragraph" id="tx26" style="margin-top: 1080vw; margin-left: 39vw; text-align: center;"> <b class="olivia">OLIVIA</b> GIVES <b class="angier">ANGIER</b> <br> <b class="borden">BORDEN</b>'S DIARY BUT <br>THE TWO FIGHT</p>
+      <p class="whitetx , section__paragraph" id="tx27"style="margin-top: 1167vw; margin-left: 55vw; text-align: center;"> <b class="angier">ANGIER</b> AND <b class="cutter">CUTTER</b> <br>KIDNAP AND BURY <br> <b class="ALFRED">ALFRED</b> ALIVE</p>
+      <p class="whitetx , section__paragraph" id="tx28"style="margin-top: 1208vw; margin-left: 52vw; text-align: center;"><b class="freddie">FREDDIE</b> SAVES <br><b class="ALFRED">ALFRED</b></p>
+
+  <p class="whitetx , section__paragraph" id="tx29"style="margin-top: 1290vw; margin-left: 63vw; text-align: center;"> <b class="angier">ANGIER</b> GOES <br>TO <b class="tesla">TESLA</b> IN<br>COLORADO </p>
+  <p class="whitetx , section__paragraph" id="tx35"style="margin-top: 1320vw; margin-left: 15vw; text-align: center;"> MEANWHILE IN <b class="london">LONDON</b></p>
+  <p class="whitetx , section__paragraph" id="tx36"style="margin-top: 1344.5vw; margin-left: 28vw; text-align: center;"> <b class="freddie">FREDDIE</b> AND <b class="olivia">OLIVIA</b> <br>SPEND MUCH TIME <br>TOGETHER AND FALL <br>IN LOVE</p>
+  <p class="whitetx , section__paragraph" id="tx30"style="margin-top: 1371vw; margin-left: 58vw; text-align: center;"> <b class="angier">ANGIER</b> READS <br><b class="borden">BORDEN</b>'S DIARY <br>WHICH MAKES HIM <br>NERVOUS </p>
+  <p class="whitetx , section__paragraph" id="tx30"style="margin-top: 1413vw; margin-left: 15vw; text-align: center;"> <b class="sarah">SARAH</b>, <b class="ALFRED">ALFRED</b>, <b class="olivia">OLIVIA</b> <br>AND <b class="freddie">FREDDIE</b> HAVE <br>DINNER TOGETHER AFTER <br><b class="borden">BORDEN</b>'S PERFORMANCE</p>
+  <p class="whitetx , section__paragraph" id="tx31"style="margin-top: 1488vw; margin-left: 65vw; text-align: center;"> <b class="angier">ANGIER</b> MAKES<br><b class="tesla">TESLA</b> INVENT THE<br>TELETRASPORTATION <br>MACHINE </p>
+  <p class="whitetx , section__paragraph" id="tx43"style="margin-top: 1529vw; margin-left: 35vw; text-align: center;"> <b class="sarah">SARAH</b> TELLS <br><b class="freddie">FREDDIE</b> SHE<br>KNOWS HE <br>CHEATS ON HER</p>
+  <p class="whitetx , section__paragraph" id="tx43"style="margin-top: 1560vw; margin-left: 66vw; text-align: center;"> <b class="angier">ANGIER</b> <br>CLONES <br>HIMSELF</p>
+  <p class="whitetx , section__paragraph" id="tx43"style="margin-top: 1610vw; margin-left: 65vw; text-align: center;"> <b class="angier">ANGIER</b> <br>KILLS THE <br>CLONE</p>
+  <p class="whitetx , section__paragraph" id="tx33"style="margin-top: 1700vw; margin-left: 77vw; text-align: center;"> EDISON'S <br>MEN BURN <br>EVERYTHING <br>AT <b class="tesla">TESLA</b>'S</p>
+  <p class="whitetx , section__paragraph" id="tx48"style="margin-top: 1745vw; margin-left: 11vw; text-align: center;"> <b class="sarah">SARAH</b> <br>HANGS <br>HERSELF </p>
+  <p class="whitetx , section__paragraph" id="tx34"style="margin-top: 1775vw; margin-left: 60vw; text-align: center;"> <b class="angier">ANGIER</b> SAVES THE <br>MACHINE AND <br>RETURNS HOME </p>
+  
   
 
-
-
-</div>
-<div class="container"style="position: absolute;">
-  <div class="text-container" >
-    <p class="whitetx , section__paragraph" id="tx1" style="margin-top: 63vw; margin-left: 37vw; text-align: center;"> <b class="julia">JULIA</b> DROWNS IN <br> THE WATER TANK </p>
-    <p class="whitetx , section__paragraph" id="tx2" style="margin-top: 105vw; margin-left: 37.5vw;"> <b class="julia">JULIA</b>'S FUNERAL</p>
-    <p class="redtx" id="tx3">"WHICH KNOT DID YOU TIE" <br> "I JUST DON'T KNOW"</p>
-    <p class="whitetx , section__paragraph" id="tx4" style="margin-top: 167vw; margin-left: 3vw; text-align: center;">SARAH AND <br> ALFRED <br>  MEET FOR THE <br>FIRST TIME</p>
-    <p class="whitetx , section__paragraph" id="tx5" style="margin-top: 199vw; margin-left: 2vw; text-align: center;"> FREDDIE SWAPS <br>WITH ALFRED AT <br> SARAH'S</p>
-    <p class="redtx" id="tx6">"I LOVE YOU" <br> "NOT TODAY"</p>
-    <p class="whitetx , section__paragraph" id="tx7" style="margin-top: 244vw; margin-left: 5vw; text-align: center;"> SARAH TELLS  <br> FREDDIE SHE'S  <br> PREGNANT</p>
-    <p class="whitetx , section__paragraph" id="tx8" style="margin-top: 300vw; margin-left: 19vw; text-align: center;">ANGIER GOES TO <br>ALFRED'S PERFORMANCE <br>AND SHOOTS HIS HAND</p>
-    <p class="whitetx , section__paragraph" id="tx9" style="margin-top: 365vw; margin-left: 21vw; text-align: center;">FREDDIE CUTS OFF <br>ALFRED'S FINGERS</p>
-    <p class="whitetx , section__paragraph" id="tx10" style="margin-top: 427vw; margin-left: 50vw; text-align: center;">OLIVIA AND ANGIER <br> MEET FOR THE FIRST TIME<br>THANKS TO CUTTER</p>
-    <p class="whitetx , section__paragraph" id="tx11" style="margin-top: 501vw; margin-left: 30vw; text-align: center;">ALFRED GOES TO <br>ANGIER'S <br>PERFORMANCE <br>TO SABOTAGE HIM</p>
-    <p class="whitetx , section__paragraph" id="tx12" style="margin-top: 555vw; margin-left: 38vw; text-align: center;">FALLON AND <br> ANGIER GO <br> TO SEE TESLA'S <br> INVENTION</p>
-    <p class="whitetx , section__paragraph" id="tx13" style="margin-top: 620vw; margin-left: 3vw; text-align: center;">ANGIER FOLLOWS <br>ALFRED, JEALOUS <br>OF HIS LOVELY <br>LIFE WITH SARAH</p>
-    <p class="whitetx , section__paragraph" id="tx15" style="margin-top: 679vw; margin-left: 17vw; text-align: center;">ANGIER GOES TO <br>BORDEN'S "THE ORIGINAL <br>TRANSPORTED MAN" <br>PERFORMANCE WITH <br> OLIVIA</p>
-    <p class="whitetx , section__paragraph" id="tx16" style="margin-top: 751vw; margin-left: 17vw; text-align: center;">CUTTER GOES TO <br> THE SAME<br>PERFORMANCE</p>
-    <p class="redtx" id="tx17">"HE USES A DOUBLE"</p>
-    <p class="whitetx , section__paragraph" id="tx18" style="margin-top: 826vw; margin-left: 4vw; text-align: center;">ALFRED SURPRISES <br>SARAH WITH A NEW <br>HOUSE</p>
-    <p class="redtx" id="tx19">"I ASKED YOU<br>LAST WEEK"<br>"YOU CAUGHT ME<br>IN A WRONG MOOD"</p>
-    <p class="whitetx , section__paragraph" id="tx20" style="margin-top: 822vw; margin-left: 57vw; text-align: center;">CUTTER FINDS <br> ANGIER'S DOUBLE</p>
-    <p class="whitetx , section__paragraph" id="tx22" style="margin-top: 888vw; margin-left: 48vw; text-align: center;">ANGIER AND ROOT<br>PERFORM "THE NEW <br>TRANSPORTED MAN"</p>
-    <p class="whitetx , section__paragraph" id="tx23" style="margin-top: 934vw; margin-left: 20vw; text-align: center;">OLIVIA BETRAYS ANGIER<br> AND GOES TO THE <br> BORDENS </p>
-    <p class="whitetx , section__paragraph" id="tx24" style="margin-top: 994vw; margin-left: 52vw; text-align: center;">ALFRED <br>CONVINCES <br>ROOT TO <br>REBEL </p>
-    <p class="whitetx , section__paragraph" id="tx25" style="margin-top: 1027vw; margin-left: 35vw; text-align: center;">ROOT LEAVES DURING <br>THE SHOW AND <br>ALFRED TAKES HIS <br>PLACE, BREAKING <br>ANGIERS'S LEG </p>
-    <p class="whitetx , section__paragraph" id="tx26" style="margin-top: 1079vw; margin-left: 35vw; text-align: center;"> OLIVIA GIVES ANGIER <br> BORDEN'S DIARY BUT <br>THE TWO FIGHT</p>
-    <p class="whitetx , section__paragraph" id="tx27"style="margin-top: 1166vw; margin-left: 53vw; text-align: center;"> ANGIER AND CUTTER<br>KIDNAP AND BURY <br> ALFRED ALIVE</p>
-    <p class="whitetx , section__paragraph" id="tx28"style="margin-top: 1207vw; margin-left: 50vw; text-align: center;">FALLON SAVES <br>ALFRED</p>
-
-  <p class="whitetx" id="tx29">ANGIER GOES TO TESLA IN<br>COLORADO </p>
-  <p class="whitetx" id="tx30">HE READS BORDEN'S DIARY THAT<br>MAKES HIM NERVOUS </p>
-  <p class="whitetx" id="tx31">ANGIER OBLIGES TESLA TO MAKE THE<br>TRANSPORTED MAN MACHINE </p>
-  <p class="whitetx" id="tx32">THE MACHINE WORKS<br>UNEXPECTEDLY </p>
-  <p class="whitetx" id="tx33"> TESLA BURNS EVERYTHING</p>
-  <p class="whitetx" id="tx34">ANGIER SAVES THE MACHINE AND <br>GOES AWAY </p>
-  <p class="whitetx" id="tx35">IN THE MEANTIME...</p>
-  <p class="whitetx" id="tx36"> FALLON AND OLIVIA SPEND MUCH<br>TIME TOGETHER</p>
-  <p class="whitetx" id="tx37">THEY FALL IN LOVE </p>
-  <p class="redtx" id="tx38"> "FREDDY..."</p>
-  <p class="redtx" id="tx39"> "FREDDY?"</p>
-  <p class="redtx" id="tx40"> "YES THAT'S MY <br>NAME</p>
-  <p class="redtx" id="tx41"> "NOT AT HOME..."</p>
-  <p class="redtx" id="tx42">"BUT I'M NOT <br>ALWAYS AT<br> HOME" </p>
-  <p class="whitetx" id="tx43"> SARAH TELLS FREDDIE SHE<br>KNOWS HE CHEATS ON HER</p>
-  <p class="redtx" id="tx44"> "I LOVE YOU"</p>
-  <p class="redtx" id="tx45"> "SEE, TODAY IT'S TRUE</p>
-  <p class="redtx" id="tx46"> "CONVINCE HER <br>THAT I LOVE HER"</p>
-  <p class="redtx" id="tx47">"I LOVE YOU"<br>"NOT TODAY"</p>
-  <p class="whitetx" id="tx48">SARAH KILLS HERSELF </p>
-
-  <p class="whitetx" id="tx49">ANGIER AND CUTTER TALK<br>ABOUT THE NEW TRANSPORTED<br>MAN IDEA </p>
-  <p class="whitetx" id="tx50"> OLIVIA TELLS FALLON<br>ABOUT ANGIER'S<br>NEW SHOW</p>
-  <p class="whitetx" id="tx51"> FALLON GOES TO THE THEATRE<br>FOR THE PERFORMANCE</p>
-  <p class="whitetx" id="tx52">DURING THE HUNDREDTH<br>SHOW FALLON<br>DISCOVERS THE TRUTH </p>
-  <p class="whitetx" id="tx53"> FALLON IS<br>ARRESTED FOR<br>ANGIER'S MURDER</p>
-  <p class="whitetx" id="tx54"> ANGIER IS PRETENDING TO BE A<br>LORD CALLED CALDLOW</p>
-  <p class="whitetx" id="tx55"> OWENS GOES TO FALLON</p>
-  <p class="whitetx" id="tx56"> ALFRED AND <br>JESS VISIT<br>FALLON IN JAIL</p>
-  <p class="whitetx" id="tx57"> FALLON READING<br>ANGIER'S DIARY<br>DISCOVERS HE IS<br>ALIVE</p>
-  <p class="whitetx" id="tx58"> FALLON GIVES ALL HIS<br>MAGIC TRICKS TO OWENS<br>NOT KNOWING HE IS ANGIER</p>
-  <p class="whitetx" id="tx59"> FALLON MEETS <br>THE LORD </p>
-  <p class="whitetx" id="tx60">CUTTER GOES TO <br>THE LORD AND<br>DISCOVER HE IS<br>ANGIER </p>
-  <p class="whitetx" id="tx61">ALFRED SAYS<br>GOODBYE TO FALLON </p>
-  <p class="whitetx" id="tx62"> FALLON DIES IN JAIL</p>
-  <p class="whitetx" id="tx63">ALFRED SHOOTS ANGIER<br>AND TELLS HIM<br>ALL THE DOUBLES TRUTH </p>
-  <p class="whitetx" id="tx64"> ANGIER DIES</p>
-  <p class="whitetx" id="tx65">THANKS TO CUTTER<br>ALFRED AND HIS DAUGHTER JESS<br>ARE TOGETHER </p>
+  <p class="blacktx , section__paragraph" id="tx49" style="margin-top: 1867vw; margin-left: 68vw; text-align: center; font-size: 37px;"><b class="angier">ANGIER</b> AND <b class="cutter">CUTTER</b><br> TALK ABOUT A NEW <br>TRANSPORTED MAN <br>IDEA </p>
+<p class="blacktx , section__paragraph" id="tx50" style="margin-top: 1900vw; margin-left: 68vw; text-align: center;"> <b class="angier">ANGIER</b> PERFORMS<br> "THE REAL <br>TRANSPORTED MAN"</p>
+<p class="blacktx , section__paragraph" id="tx51" style="margin-top: 1942vw; margin-left: 17vw; text-align: center;"> <b class="olivia">OLIVIA</b> TELLS <br><b class="freddie">FREDDIE</b> ABOUT <br><b class="angier">ANGIER</b>'S NEW <br>SHOW</p>
+<p class="blacktx , section__paragraph" id="tx50a" style="margin-top: 1990vw; margin-left: 50vw; text-align: center;"> <b class="angierpazzo">ANGIER</b> CLONES<br> HIMSELF AT <br>EVERY <br>PERFORMANCE</p>
+<p class="blacktx , section__paragraph" id="tx52" style="margin-top: 2035vw; margin-left: 45vw; text-align: center;"> <b class="freddie">FREDDIE</b> GOES TO THE <br>THEATRE TO SEE "THE <br>REAL TRANSPORTED MAN" </p>
+<p class="blacktx , section__paragraph" id="tx52" style="margin-top: 2088vw; margin-left: 40vw; text-align: center;"> DURING THE LAST <br>SHOW <b class="freddie">FREDDIE</b> <br>DISCOVERS THE<br> TRUTH, APPARENTLY <br><b class="angier">ANGIER</b>DIES  </p>
+<p class="blacktx , section__paragraph" id="tx54" style="margin-top: 2135vw; margin-left: 40vw; text-align: center;"> <b class="freddie">FREDDIE</b> IS<br>ARRESTED FOR<br><b class="angier">ANGIER</b>'S MURDER</p>
+<p class="blacktx , section__paragraph" id="tx56" style="margin-top: 2177vw; margin-left: 42vw; text-align: center;"> <b class="owens">OWENS</b> GOES<br>TO <b class="freddie">FREDDIE</b><br>AND GIVES HIM<br><b class="angier">ANGIER</b>'S DIARY</p>
+<p class="blacktx , section__paragraph" id="tx57" style="margin-top: 2216vw; margin-left: 37vw; text-align: center;"> <b class="ALFRED">ALFRED</b> AND <br><b class="jess">JESS</b>VISIT<br><b class="freddie">FREDDIE</b> IN JAIL</p>
+<p class="blacktx , section__paragraph" id="tx58" style="margin-top: 2252vw; margin-left: 38vw; text-align: center;"> <b class="freddie">FREDDIE</b> READING<br><b class="angier">ANGIER</b>'S DIARY<br>DISCOVERS HE'S<br>ALIVE</p>
+<p class="blacktx , section__paragraph" id="tx59" style="margin-top: 2295vw; margin-left: 45vw; text-align: center;"> <b class="freddie">FREDDIE</b>GIVES ALL <br>HIS MAGIC TRICKS <br>TO <b class="owens">OWENS</b></p>
+<p class="blacktx , section__paragraph" id="tx60" style="margin-top: 2333vw; margin-left: 40vw; text-align: center;"> <b class="freddie">FREDDIE</b> <br>MEETS A <br>LORD </p>
+<p class="blacktx , section__paragraph" id="tx61" style="margin-top: 2381vw; margin-left: 22vw; text-align: center;"> <b class="cutter">CUTTER</b> GOES <br>TO THE LORD<br> AND DISCOVERS <br>HE IS <b class="angier">ANGIER</b> </p>
+<p class="blacktx , section__paragraph" id="tx62" style="margin-top: 2404vw; margin-left: 21vw; text-align: center;"> <b class="ALFRED">ALFRED</b> SAYS<br>GOODBYE TO <br><b class="freddie">FREDDIE</b> </p>
+<p class="blacktx , section__paragraph" id="tx63" style="margin-top: 2431vw; margin-left: 43vw; text-align: center;"> <b class="freddie">FREDDIE</b> <br>BEING <br>EXECUTED <br>IN JAIL</p>
+<p class="blacktx , section__paragraph" id="tx64" style="margin-top: 2455vw; margin-left: 16vw; text-align: center;"> <b class="ALFRED">ALFRED</b> SHOOTS <br><b class="angier">ANGIER</b> AND <br>TELLS HIM ALL<br> ABOUT THE DOUBLES' <br>TRUTH </p>
+<p class="blacktx , section__paragraph" id="tx65" style="margin-top: 2493vw; margin-left: 40vw; text-align: center;"> <b class="angier">ANGIER</b> DIES </p>
+<p class="blacktx , section__paragraph" id="tx66" style="margin-top: 2515vw; margin-left: 35vw; text-align: center;">THANKS TO <b class="cutter">CUTTER</b><br><b class="ALFRED">ALFRED</b> AND HIS <br>DAUGHTER <b class="jess">JESS</b> ARE <br> BACK TOGETHER </p>
      
-  </div>
- 
+       
+    </div>
  
  
   <div class="svg-container">
@@ -223,8 +200,8 @@ style="position: absolute; margin-top: 1200px; left:50%; transform: translate(-5
   </div>
 
  <!-- CLUE COUNTER -->
- <span id="clueCounter" class="clueCounter clue-transition">0</span>
- <div id="explainCounter" class="explainCounter explain-transition">Spiegazioni contatore indizi</div>
+ <span id="clueCounter">0</span>
+ <div id="explainCounter">Spiegazioni contatore indizi</div>
  <img id= "lente" src="png/lente.png" alt="Img lente clue counter">
  
 <!-- PARTE FINALE -->
@@ -245,8 +222,13 @@ style="position: absolute; margin-top: 1200px; left:50%; transform: translate(-5
 
 <!-- UCCELLO -->
 
-<image  id="Uccello" alt="Uccello" src="png/UCCELLO.png" style="position: absolute; margin-top: 1400px; left:50%; transform: translate(-50%,-50%); width: 40%; height: auto;">
-    
+<!-- <image  id="Uccello" alt="Uccello" src="png/UCCELLO.png" style="position: absolute; margin-top: 1400px; left:50%; transform: translate(-50%,-50%); width: 40%; height: auto;"> -->
+<img id="hat-image" src="png/cappello all'ingiù.png" style="position: absolute; margin-top: 1250px; left:50%; transform: translate(-50%,-50%); width: 35%; height: auto; z-index: 6;">
+      
+<div class="bounce"></div>
+</div>
+
+
     
 
     <!--<img id="nuovoCappelloImg" src="png/cappello all'ingiù.png" alt="Nuovo Cappello" 

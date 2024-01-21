@@ -250,42 +250,42 @@ function pad(num) {
 }
 
 // VECCHIA ANIMAZIONE LINEE
-window.addEventListener('scroll', function() {
-  let lineContainer = document.querySelector('.line-container');
-  let startPosition = lineContainer.offsetTop;
-  let pageHeight = document.documentElement.scrollHeight;
-  let scrollPosition = window.scrollY;
+// window.addEventListener('scroll', function() {
+//   let lineContainer = document.querySelector('.line-container');
+//   let startPosition = lineContainer.offsetTop;
+//   let pageHeight = document.documentElement.scrollHeight;
+//   let scrollPosition = window.scrollY;
 
-  let paths = document.querySelectorAll('svg path');
+//   let paths = document.querySelectorAll('svg path');
 
-  paths.forEach((path) => {
-      let pathLength = path.getTotalLength();
-      path.style.strokeDasharray = pathLength + ' ' + pathLength;
-      path.style.strokeDashoffset = pathLength;
+//   paths.forEach((path) => {
+//       let pathLength = path.getTotalLength();
+//       path.style.strokeDasharray = pathLength + ' ' + pathLength;
+//       path.style.strokeDashoffset = pathLength;
 
-      if (scrollPosition >= startPosition) {
-          // Il tuo codice da eseguire quando lo scroll raggiunge la posizione desiderata
+//       if (scrollPosition >= startPosition) {
+//           // Il tuo codice da eseguire quando lo scroll raggiunge la posizione desiderata
 
-          // Calcola la percentuale di completamento del disegno
-          let scrollPercentage = Math.min(1, (scrollPosition - startPosition) / (pageHeight - startPosition));
+//           // Calcola la percentuale di completamento del disegno
+//           let scrollPercentage = Math.min(1, (scrollPosition - startPosition) / (pageHeight - startPosition));
 
-          // Riduci la velocità regolando il valore seguente
-          let drawLength = pathLength * scrollPercentage; // Puoi regolare il divisore per controllare la velocità
+//           // Riduci la velocità regolando il valore seguente
+//           let drawLength = pathLength * scrollPercentage; // Puoi regolare il divisore per controllare la velocità
 
-          // Disegna il tratto
-          path.style.strokeDashoffset = pathLength - drawLength;
-      } else {
-          // Il tuo codice da eseguire quando lo scroll è al di sopra della posizione desiderata
-          path.style.strokeDashoffset = pathLength;
-      }
-  });
+//           // Disegna il tratto
+//           path.style.strokeDashoffset = pathLength - drawLength;
+//       } else {
+//           // Il tuo codice da eseguire quando lo scroll è al di sopra della posizione desiderata
+//           path.style.strokeDashoffset = pathLength;
+//       }
+//   });
 
-  if (scrollPosition >= startPosition) {
-      document.querySelector('.line-container').classList.add('show-line');
-  } else {
-      document.querySelector('.line-container').classList.remove('show-line');
-  }
-});
+//   if (scrollPosition >= startPosition) {
+//       document.querySelector('.line-container').classList.add('show-line');
+//   } else {
+//       document.querySelector('.line-container').classList.remove('show-line');
+//   }
+// });
 
 //ANIMAZIONE RETTANGOLO MASCHERA
 // document.addEventListener("scroll", function() {
@@ -320,16 +320,17 @@ let currentScrollY;
 let direction;
 
 let points = [
-  { id: 0, top: 6200, visited: false, explanation: "He doesn't know which knot he tied because it was his twin." },
-  { id: 1, top: 8000,  visited: false, explanation: "He doesn't love her; it's his twin who loves her." },
-  { id: 2, top: 16000,  visited: false, explanation: "Cutter says that the trick involves the use of a double." },
-  { id: 3, top: 16700,  visited: false, explanation: "It was his twin who had said no." },
-  { id: 4, top: 18800, visited: false, explanation: "Borden himself tells Root that he uses a double in his trick." },
-  { id: 5, top: 25500,  visited: false, explanation: "He's not always the person Sarah knows, as it's his twin." },
-  { id: 6, top: 28200,  visited: false, explanation: "In this scene, it's truly Alfred, and therefore the love is authentic." },
-  { id: 7, top: 28900,  visited: false, explanation: "Alfred asks his twin to assure Sarah that he loves her." },
-  { id: 8, top: 29600, bottom: 40000, visited: false, explanation: "Sarah talks to the twin that doesn't love her, but she is unaware of it." },
+  { id: 0, top: 6200, visited: false, explanation: "Alfred doesn't know which knot he tied because it was his twin Freddie." },
+  { id: 1, top: 8000,  visited: false, explanation: "Freddie doesn't love Sarah; it's his twin Alfred who loves her." },
+  { id: 2, top: 14650,  visited: false, explanation: "Olivia tells Angier the trick involves the use of a double." },
+  { id: 3, top: 15750,  visited: false, explanation: "Angier asks how the trick was made again, and Cutter replies." },
+  { id: 4, top: 18300, visited: false, explanation: "Borden himself tells Root that he uses a double in his trick." },
+  { id: 5, top: 25200,  visited: false, explanation: "Sarah's talking to Freddie and not Alfred, his real lover." },
+  { id: 6, top: 27800,  visited: false, explanation: "In this scene, it's truly Alfred, and therefore the love is authentic." },
+  { id: 7, top: 28600,  visited: false, explanation: "Alfred asks his twin to assure Sarah that he loves her." },
+  { id: 8, top: 29300, bottom: 30000, visited: false, explanation: "Sarah talks to Freddie, who doesn't love her, but she is unaware of it." },
 ];
+
 
 let pointCounter = 0;
 
@@ -338,7 +339,7 @@ let clueCounterVisible = false; // Variabile per gestire la visibilità del clue
 function onScroll() {
   const scrollTop = window.scrollY;
   const explainCounterElement = document.getElementById('explainCounter');
-  const fineCounter = 40000; //quando deve sparire il clue counter
+  const fineCounter = 30000; //quando deve sparire il clue counter
 
   if (currentScrollY === scrollTop) return;
 
@@ -360,7 +361,7 @@ function onScroll() {
     }
   } else if (currentScrollY < previousScrollY) {
     direction = "up";
-    if ((currentScrollY < points[0].top) || (currentScrollY >= 40000)) {
+    if ((currentScrollY < points[0].top) || (currentScrollY >= 30000)) {
       explainCounterElement.classList.remove('show');
       hideClueCounter(); // Nasconde il clue counter se torni indietro prima del punto 1
        // Nasconde l'explain counter se torni indietro
@@ -480,3 +481,21 @@ function setupScroll() {
 }
 
 setupScroll();
+
+document.addEventListener("DOMContentLoaded", function () {
+  var bounceContainer = document.getElementById("bounce-container");
+  var bounceElement = document.querySelector(".bounce");
+
+  window.addEventListener("scroll", function () {
+      var scrollPosition = window.scrollY;
+
+      // Adjust the threshold value based on when you want the animation to start
+      var threshold = 500;
+
+      if (scrollPosition > threshold) {
+          bounceElement.classList.add("animate");
+      } else {
+          bounceElement.classList.remove("animate");
+      }
+  });
+});
