@@ -16,6 +16,10 @@
 
 <!-- PALLINA -->
 <div style=" display: flex; justify-content: center; align-items: center;">
+
+<img id="cappelloImg" src="png/cappello all'insù.png" alt="Cappello" 
+style="position: absolute; margin-top: 1200px; left:50%; transform: translate(-50%,-50%); width: 35%; height: auto;" />
+
     <svg width="136" height="1000" viewBox="0 0 136 1000" fill="none" style="margin-top: 300px; "  >
         <circle id="movingCircle" cx="68" cy="68" r="68" fill="#890202"; position="absolute"/>
     </svg>
@@ -72,12 +76,15 @@
 
  <div class="switch">
  <h1 class="switch__text , header__text"> 
- Click and hover on the timeline to switch and see order of events </h1>
+  Here's a visual representation of movie scenes. <br> Each color represents an act,<br> 
+  just as the three acts of a magic trick.<br> 
+ <br><br>
+  <b class="click">Click on the bar to rearrange the scenes</b> </h1>
  </div>
 
 
 <!-- TIMELINE -->
-<div class="barrette" style="margin-top: 400px;">
+<div class="barrette" style="margin-top: 500px;">
     <img id="image" class="barrette" src="png/movieorder.png" alt="Immagine 1">
     
     <div class="movie-order">
@@ -92,207 +99,178 @@
       <div class="overlay-text timeline-text">00:00:00</div>
     </div>
   
-    <div class="cibo-overlay" style="position: relative;">
+    <div class="cibo-overlay" style="position: relative">
       <div class="overlay-text cibo-text"></div>
     </div>
   </div>
-  
-<!-- barre statiche 
-<div style="margin-top: 400px; text-align: center;";>
-    <h1 class="sottotitolo"> MOVIE ORDER </h1>
-</div>
 
-<div style=" margin-top: 20px; display: flex; align-items: center; justify-content: center;";>
-    <img src="png/barra1.jpg" style="width: 80%">
-</div>
+<!-- DIV SPIEGONE -->
+<div class="spiegone">
+    <img id="spiegone" src="png/spiegone.svg" style="position: absolute; z-index: 999; scale: 60%; right: -260px; top: 3600px;" alt="spiegone">
+</div>>
 
-<div style="margin-top: 50px; text-align: center;";>
-    <h1 class="sottotitolo"> CHRONOLOGICAL ORDER</h1>
-</div>
-
-<div style="margin-top: 20px; display: flex; align-items: center; justify-content: center;";>
-    <img src="png/barra2.jpg" style="width: 80%;">
-</div> -->
-
-<!-- DIV GRADIENTE - EVERY MAGIC TRICK-->
- <div style=" background: linear-gradient(#000000,#2791a7); height: 1100px; width: 100%; margin-top: 50px; position: absolute;"> 
- <h1 class="sottotitolo , header__text" 
- style=" display: flex; justify-content: center; text-align: center; margin-top: 350px; position: absoulte; font-weight: 800;
- font-size: 40px;">
- FOLLOW THE CHARACTERS IN CHRONOLOGICAL ORDER </h1>
-</div>  
+<!-- DIV GRADIENTE-->
+ <div style=" background: linear-gradient(#000000,#2791a7); height: 1090px; width: 100%; margin-top: 50px; position: absolute;"> 
+ </div>  
 
 
 <div style="margin-top: 835px; text-align: center;";>
-    <h1 class="sottotitolo , header__text" style="color: #1b2f36; position: relative; font-size: 30px;"> EVERY MAGIC TRICK CONSISTS OF THREE ACTS... </h1>
+    <h1 class="sottotitolo , header__text" style="color: #1b2f36; position: relative; font-size: 30px; opacity: 0;"> EVERY MAGIC TRICK CONSISTS OF THREE ACTS... </h1>
 </div>
 
-<!-- DIV GRADIENTE THE PLEDGE -->
+<!-- DIV THE PLEDGE + THE TURN + THE PRESTIGE-->
 <div style="margin-top: 100px; text-align: center; height: 160px;";>
-    <h1 class="sottotitolo , header__text" style="color: #1b2f36; font-size: 100px; display: flex; justify-content: center; text-align: center; position: relative"><b>THE PLEDGE</b></h1>
+    <h1 class="header__text , the_pledge "><b>THE PLEDGE</b></h1>
+    <h1 class="header__text , the_pledge " style="position: absolute; z-index: 999; margin-top: 1247vw; margin-left: 59vw"><b>THE TURN</b></h1>
+    <h1 class="header__text , the_pledge " style="position: absolute; z-index: 999; margin-top: 1850vw; margin-left: 39.5vw; "><b>THE PRESTIGE</b></h1>
 </div>
 
 <!-- DIV LINEE -->
+
+
 <div id="path-container" class="container">
-    <div class="line-container w-full" >
-    
-<!-- testi sulle linee -->
-<p class="whitetx" id="tx1" style="margin-top: 200px;">Julia drowns in the <br> water tank </p>
-<p class="whitetx" id="tx2" style="margin-top: 280px;">Julia's funeral</p>
-<p class="redtx" id="tx3">"Which knot did you tie" <br> "I just don't know"</p>
-<p class="whitetx" id="tx4">Sarah and alfred <br>  meet fot the first time</p>
-<p class="whitetx" id="tx5">Freddie appears <br> at Sarah's house</p>
-<p class="redtx"id="tx6">"I love you" <br> "Not today"</p>
-<p class="whitetx" id="tx7">Sarah tells  <br> Freddie she's  <br> pregnant</p>
-<p class="whitetx" id="tx8">Angier goes to Alfred's <br> performance and shoot his hand</p>
-<p class="whitetx" id="tx9">Freddie cuts off <br>Alfred's fingers</p>
-<p class="whitetx" id="tx10">Olivia and Angier <br> meet for the first time<br>thanks to Cutter</p>
-<p class="whitetx" id="tx11">Alfred goes to Angier's <br>performance to <br>sabotage him</p>
-<p class="whitetx" id="tx12">Fallon and Angier go to see <br>Tesla's inventation</p>
-<p class="whitetx" id="tx13">Angier follows Fallon and <br>sees his lovely like with<br>Sarah</p>
-<p class="whitetx" id="tx14">And here his <br> osession starts</p>
-<p class="whitetx" id="tx15">Angier goes to Borden's <br>transported man performance</p>
-<p class="whitetx" id="tx16">Cutter sees the same<br>performace</p>
-<p class="redtx"id="tx17">"He uses a double"</p>
-<p class="whitetx" id="tx18">Alfred<br>surprises<br>Sarah buying her <br>a new home</p>
-<p class="redtx"id="tx19">"I asked you<br>last week"<br>"You caught me<br>in a wrong mood"</p>
-<p class="whitetx" id="tx20">They find Angier a double</p>
-<p class="whitetx" id="tx22">Angier and Gerry<br>perform the<br>transported man </p>
-<p class="whitetx" id="tx23">Olivia cheats on Angier<br>going to Fallon and Alfred </p>
-<p class="whitetx" id="tx24">Borden convinces <br>Root to Rebel </p>
-<p class="whitetx" id="tx25">Root leaves the stage during the show<br>and Borden takes his place<br>breaking Angier's leg </p>
-<p class="whitetx" id="tx26"> Olivie gives Angier Borden's <br>diary and the two fights</p>
-<p class="whitetx" id="tx27"> Angier and Cutter<br>kidnap Alfred</p>
-<p class="whitetx" id="tx28">Fallon saves Alfred</p>
+  <div class="line-container w-full" >
+</div>
 
-<p class="whitetx" id="tx29">Angier goes to Tesla in<br>Colorado </p>
-<p class="whitetx" id="tx30">He reads Borden's diary that<br>makes him nervous </p>
-<p class="whitetx" id="tx31">Angier obliges Tesla to make the<br>transported man machine </p>
-<p class="whitetx" id="tx32">The machine works<br>unexpectedly </p>
-<p class="whitetx" id="tx33"> Tesla burns everything</p>
-<p class="whitetx" id="tx34">Angier saves the machine and <br>goes away </p>
-<p class="whitetx" id="tx35">IN THE MEANTIME...</p>
-<p class="whitetx" id="tx36"> Fallon and Olivia spend much<br>time together</p>
-<p class="whitetx" id="tx37">They fall in love </p>
-<p class="redtx"id="tx38"> "Freddy..."</p>
-<p class="redtx"id="tx39"> "Freddy?"</p>
-<p class="redtx"id="tx40"> "Yes that's my <br>name</p>
-<p class="redtx"id="tx41"> "Not at home..."</p>
-<p class="redtx"id="tx42">"But I'm not <br>always at<br> home" </p>
-<p class="whitetx" id="tx43"> Sarah tells Freddie she<br>knows he cheats on her</p>
-<p class="redtx"id="tx44"> "I love you"</p>
-<p class="redtx"id="tx45"> "See, today it's true</p>
-<p class="redtx"id="tx46"> "Convince her <br>that I love her"</p>
-<p class="redtx"id="tx47">"I love you"<br>"Not today"</p>
-<p class="whitetx" id="tx48">Sarah kills herself </p>
+<div class="container"style="position: absolute;">
+    <div class="text-container" >
+      <p class="whitetx , section__paragraph" id="tx1" style="margin-top: 63.208vw; margin-left: 38vw; text-align: center;"> <b class="julia">JULIA</b> DROWNS IN <br> THE WATER TANK </p>
+      <p class="whitetx , section__paragraph" id="tx2" style="margin-top: 105vw; margin-left: 37vw;"> <b class="julia">JULIA</b>'S FUNERAL</p>
+      <p class="whitetx , section__paragraph" id="tx4" style="margin-top: 168vw; margin-left: 5vw; text-align: center;"><b class="sarah">SARAH</b> AND <br> <b class="ALFRED">ALFRED</b> <br>  MEET FOR THE <br>FIRST TIME</p>
+      <p class="whitetx , section__paragraph" id="tx5" style="margin-top: 199.5vw; margin-left: 5vw; text-align: center;"> <b class="freddie">FREDDIE</b> SWAPS <br>WITH <b class="ALFRED">ALFRED</b> AT <br> <b class="sarah">SARAH</b>'S</p>
+      <p class="whitetx , section__paragraph" id="tx7" style="margin-top: 244vw; margin-left: 7vw; text-align: center;"> <b class="sarah">SARAH</b> TELLS  <br> <b class="freddie">FREDDIE</b> SHE'S  <br> PREGNANT</p>
+      <p class="whitetx , section__paragraph" id="tx8" style="margin-top: 300.7vw; margin-left: 20vw; text-align: center;"><b class="angier">ANGIER</b> GOES TO <br><b class="ALFRED">ALFRED</b>'S PERFORMANCE <br>AND SHOOTS HIS HAND</p>
+      <p class="whitetx , section__paragraph" id="tx9" style="margin-top: 365.5vw; margin-left: 23vw; text-align: center;"><b class="freddie">FREDDIE</b> CUTS OFF <br><b class="ALFRED">ALFRED</b>'S FINGERS</p>
+      <p class="whitetx , section__paragraph" id="tx10" style="margin-top: 428vw; margin-left: 55vw; text-align: center;"><b class="olivia">OLIVIA</b> AND <b class="angier">ANGIER</b> <br> MEET FOR THE FIRST TIME<br>THANKS TO <b class="cutter">CUTTER</b></p>
+      <p class="whitetx , section__paragraph" id="tx11" style="margin-top: 502vw; margin-left: 30vw; text-align: center;"><b class="ALFRED">ALFRED</b> GOES TO <br><b class="angier">ANGIER</b>'S <br>PERFORMANCE <br>TO SABOTAGE HIM</p>
+      <p class="whitetx , section__paragraph" id="tx12" style="margin-top: 556vw; margin-left: 38vw; text-align: center;"><b class="freddie">FREDDIE</b> AND <br> <b class="angier">ANGIER</b> GO <br> TO SEE <b class="tesla">TESLA</b>'S <br> INVENTION</p>
+      <p class="whitetx , section__paragraph" id="tx13" style="margin-top: 621vw; margin-left: 3vw; text-align: center;"><b class="angier">ANGIER</b> FOLLOWS <br><b class="ALFRED">ALFRED</b>, JEALOUS <br>OF HIS LOVELY <br>LIFE WITH <b class="sarah">SARAH</b></p>
+      <p class="whitetx , section__paragraph" id="tx15" style="margin-top: 680vw; margin-left: 21vw; text-align: center;"><b class="angier">ANGIER</b> GOES TO <br><b class="borden">BORDEN</b>'S "THE ORIGINAL <br>TRANSPORTED MAN" <br>PERFORMANCE WITH <br> <b class="olivia">OLIVIA</b></p>
+      <p class="whitetx , section__paragraph" id="tx16" style="margin-top: 752vw; margin-left: 20vw; text-align: center;"><b class="cutter">CUTTER</b> GOES TO <br> THE SAME<br>PERFORMANCE</p>
+      <p class="whitetx , section__paragraph" id="tx18" style="margin-top: 826vw; margin-left: 6vw; text-align: center;"><b class="ALFRED">ALFRED</b> SURPRISES <br><b class="sarah">SARAH</b> WITH A NEW <br>HOUSE</p>
+      <p class="whitetx , section__paragraph" id="tx20" style="margin-top: 823vw; margin-left: 60vw; text-align: center;"><b class="cutter">CUTTER</b> FINDS <br> <b class="angier">ANGIER</b>'S DOUBLE</p>
+      <p class="whitetx , section__paragraph" id="tx22" style="margin-top: 888vw; margin-left: 50vw; text-align: center;"><b class="angier">ANGIER</b> AND <b class="root">ROOT</b><br>PERFORM "THE NEW <br>TRANSPORTED MAN"</p>
+      <p class="whitetx , section__paragraph" id="tx23" style="margin-top: 934vw; margin-left: 23vw; text-align: center;"><b class="olivia">OLIVIA</b> BETRAYS <b class="angier">ANGIER</b><br> AND GOES TO THE <br> <b class="borden">BORDENS</b> </p>
+      <p class="whitetx , section__paragraph" id="tx24" style="margin-top: 995vw; margin-left: 53vw; text-align: center;"><b class="ALFRED">ALFRED</b> <br>CONVINCES <br><b class="root">ROOT</b> TO <br>REBEL </p>
+      <p class="whitetx , section__paragraph" id="tx25" style="margin-top: 1028vw; margin-left: 39vw; text-align: center;"><b class="root">ROOT</b> LEAVES DURING <br>THE SHOW AND <br><b class="ALFRED">ALFRED</b> TAKES HIS <br>PLACE, BREAKING <br><b class="angier">ANGIER</b>'S LEG </p>
+      <p class="whitetx , section__paragraph" id="tx26" style="margin-top: 1080vw; margin-left: 39vw; text-align: center;"> <b class="olivia">OLIVIA</b> GIVES <b class="angier">ANGIER</b> <br> <b class="borden">BORDEN</b>'S DIARY BUT <br>THE TWO FIGHT</p>
+      <p class="whitetx , section__paragraph" id="tx27"style="margin-top: 1167vw; margin-left: 55vw; text-align: center;"> <b class="angier">ANGIER</b> AND <b class="cutter">CUTTER</b> <br>KIDNAP AND BURY <br> <b class="ALFRED">ALFRED</b> ALIVE</p>
+      <p class="whitetx , section__paragraph" id="tx28"style="margin-top: 1208vw; margin-left: 52vw; text-align: center;"><b class="freddie">FREDDIE</b> SAVES <br><b class="ALFRED">ALFRED</b></p>
 
-<p class="whitetx" id="tx49">Angier and Cutter talk<br>about the new transported<br>man idea </p>
-<p class="whitetx" id="tx50"> Olivia tells Fallon<br>about Angier's<br>new show</p>
-<p class="whitetx" id="tx51"> Fallon goes to the theatre<br>for the performace</p>
-<p class="whitetx" id="tx52">During the hundredth<br>show Fallon<br>discovers the truth </p>
-<p class="whitetx" id="tx53"> Fallon is<br>arrested for<br>Angier's murder</p>
-<p class="whitetx" id="tx54"> Angier is pretending to be a<br>Lord called Caldlow</p>
-<p class="whitetx" id="tx55"> Owens goes to Fallon</p>
-<p class="whitetx" id="tx56"> Alfred and <br>Jess visit<br>Fallon in jail</p>
-<p class="whitetx" id="tx57"> Fallon reading<br>Angier's diary<br>discovers he is<br>alive</p>
-<p class="whitetx" id="tx58"> Fallon gives all his<br>magic tricks to Owens<br>not knowing he is Angier</p>
-<p class="whitetx" id="tx59"> Fallon meets <br>the Lord </p>
-<p class="whitetx" id="tx60">Cutter goes to <br>the Lord and<br>discover he is<br>Angier </p>
-<p class="whitetx" id="tx61">Alfred says<br>goodbye to Fallon </p>
-<p class="whitetx" id="tx62"> Fallon dies in jail</p>
-<p class="whitetx" id="tx63">Alfred shoots Angier<br>and tells him<br>all the doubles truth </p>
-<p class="whitetx" id="tx64"> Angier dies</p>
-<p class="whitetx" id="tx65">Thanks to Cutter<br>Alfred and his daughter Jess<br>are together </p>
+  <p class="whitetx , section__paragraph" id="tx29"style="margin-top: 1290vw; margin-left: 63vw; text-align: center;"> <b class="angier">ANGIER</b> GOES <br>TO <b class="tesla">TESLA</b> IN<br>COLORADO </p>
+  <p class="whitetx , section__paragraph" id="tx35"style="margin-top: 1320vw; margin-left: 15vw; text-align: center;"> MEANWHILE IN <b class="london">LONDON</b></p>
+  <p class="whitetx , section__paragraph" id="tx36"style="margin-top: 1344.5vw; margin-left: 28vw; text-align: center;"> <b class="freddie">FREDDIE</b> AND <b class="olivia">OLIVIA</b> <br>SPEND MUCH TIME <br>TOGETHER AND FALL <br>IN LOVE</p>
+  <p class="whitetx , section__paragraph" id="tx30"style="margin-top: 1371vw; margin-left: 58vw; text-align: center;"> <b class="angier">ANGIER</b> READS <br><b class="borden">BORDEN</b>'S DIARY <br>WHICH MAKES HIM <br>NERVOUS </p>
+  <p class="whitetx , section__paragraph" id="tx30"style="margin-top: 1413vw; margin-left: 15vw; text-align: center;"> <b class="sarah">SARAH</b>, <b class="ALFRED">ALFRED</b>, <b class="olivia">OLIVIA</b> <br>AND <b class="freddie">FREDDIE</b> HAVE <br>DINNER TOGETHER AFTER <br><b class="borden">BORDEN</b>'S PERFORMANCE</p>
+  <p class="whitetx , section__paragraph" id="tx31"style="margin-top: 1488vw; margin-left: 65vw; text-align: center;"> <b class="angier">ANGIER</b> MAKES<br><b class="tesla">TESLA</b> INVENT THE<br>TELETRASPORTATION <br>MACHINE </p>
+  <p class="whitetx , section__paragraph" id="tx43"style="margin-top: 1529vw; margin-left: 35vw; text-align: center;"> <b class="sarah">SARAH</b> TELLS <br><b class="freddie">FREDDIE</b> SHE<br>KNOWS HE <br>CHEATS ON HER</p>
+  <p class="whitetx , section__paragraph" id="tx43"style="margin-top: 1560vw; margin-left: 66vw; text-align: center;"> <b class="angier">ANGIER</b> <br>CLONES <br>HIMSELF</p>
+  <p class="whitetx , section__paragraph" id="tx43"style="margin-top: 1610vw; margin-left: 65vw; text-align: center;"> <b class="angier">ANGIER</b> <br>KILLS THE <br>CLONE</p>
+  <p class="whitetx , section__paragraph" id="tx33"style="margin-top: 1700vw; margin-left: 77vw; text-align: center;"> EDISON'S <br>MEN BURN <br>EVERYTHING <br>AT <b class="tesla">TESLA</b>'S</p>
+  <p class="whitetx , section__paragraph" id="tx48"style="margin-top: 1745vw; margin-left: 11vw; text-align: center;"> <b class="sarah">SARAH</b> <br>HANGS <br>HERSELF </p>
+  <p class="whitetx , section__paragraph" id="tx34"style="margin-top: 1775vw; margin-left: 60vw; text-align: center;"> <b class="angier">ANGIER</b> SAVES THE <br>MACHINE AND <br>RETURNS HOME </p>
+  
+  
 
-        <!-- <svg  viewBox="0 0 1984 25300" fill="none" preserveAspectRatio="xMidYMax meet"> -->
+  <p class="blacktx , section__paragraph" id="tx49" style="margin-top: 1867vw; margin-left: 68vw; text-align: center; font-size: 37px;"><b class="angier">ANGIER</b> AND <b class="cutter">CUTTER</b><br> TALK ABOUT A NEW <br>TRANSPORTED MAN <br>IDEA </p>
+<p class="blacktx , section__paragraph" id="tx50" style="margin-top: 1900vw; margin-left: 68vw; text-align: center;"> <b class="angier">ANGIER</b> PERFORMS<br> "THE REAL <br>TRANSPORTED MAN"</p>
+<p class="blacktx , section__paragraph" id="tx51" style="margin-top: 1942vw; margin-left: 17vw; text-align: center;"> <b class="olivia">OLIVIA</b> TELLS <br><b class="freddie">FREDDIE</b> ABOUT <br><b class="angier">ANGIER</b>'S NEW <br>SHOW</p>
+<p class="blacktx , section__paragraph" id="tx50a" style="margin-top: 1990vw; margin-left: 50vw; text-align: center;"> <b class="angierpazzo">ANGIER</b> CLONES<br> HIMSELF AT <br>EVERY <br>PERFORMANCE</p>
+<p class="blacktx , section__paragraph" id="tx52" style="margin-top: 2035vw; margin-left: 45vw; text-align: center;"> <b class="freddie">FREDDIE</b> GOES TO THE <br>THEATRE TO SEE "THE <br>REAL TRANSPORTED MAN" </p>
+<p class="blacktx , section__paragraph" id="tx52" style="margin-top: 2088vw; margin-left: 40vw; text-align: center;"> DURING THE LAST <br>SHOW <b class="freddie">FREDDIE</b> <br>DISCOVERS THE<br> TRUTH, APPARENTLY <br><b class="angier">ANGIER</b>DIES  </p>
+<p class="blacktx , section__paragraph" id="tx54" style="margin-top: 2135vw; margin-left: 40vw; text-align: center;"> <b class="freddie">FREDDIE</b> IS<br>ARRESTED FOR<br><b class="angier">ANGIER</b>'S MURDER</p>
+<p class="blacktx , section__paragraph" id="tx56" style="margin-top: 2177vw; margin-left: 42vw; text-align: center;"> <b class="owens">OWENS</b> GOES<br>TO <b class="freddie">FREDDIE</b><br>AND GIVES HIM<br><b class="angier">ANGIER</b>'S DIARY</p>
+<p class="blacktx , section__paragraph" id="tx57" style="margin-top: 2216vw; margin-left: 37vw; text-align: center;"> <b class="ALFRED">ALFRED</b> AND <br><b class="jess">JESS</b>VISIT<br><b class="freddie">FREDDIE</b> IN JAIL</p>
+<p class="blacktx , section__paragraph" id="tx58" style="margin-top: 2252vw; margin-left: 38vw; text-align: center;"> <b class="freddie">FREDDIE</b> READING<br><b class="angier">ANGIER</b>'S DIARY<br>DISCOVERS HE'S<br>ALIVE</p>
+<p class="blacktx , section__paragraph" id="tx59" style="margin-top: 2295vw; margin-left: 45vw; text-align: center;"> <b class="freddie">FREDDIE</b>GIVES ALL <br>HIS MAGIC TRICKS <br>TO <b class="owens">OWENS</b></p>
+<p class="blacktx , section__paragraph" id="tx60" style="margin-top: 2333vw; margin-left: 40vw; text-align: center;"> <b class="freddie">FREDDIE</b> <br>MEETS A <br>LORD </p>
+<p class="blacktx , section__paragraph" id="tx61" style="margin-top: 2381vw; margin-left: 22vw; text-align: center;"> <b class="cutter">CUTTER</b> GOES <br>TO THE LORD<br> AND DISCOVERS <br>HE IS <b class="angier">ANGIER</b> </p>
+<p class="blacktx , section__paragraph" id="tx62" style="margin-top: 2404vw; margin-left: 21vw; text-align: center;"> <b class="ALFRED">ALFRED</b> SAYS<br>GOODBYE TO <br><b class="freddie">FREDDIE</b> </p>
+<p class="blacktx , section__paragraph" id="tx63" style="margin-top: 2431vw; margin-left: 43vw; text-align: center;"> <b class="freddie">FREDDIE</b> <br>BEING <br>EXECUTED <br>IN JAIL</p>
+<p class="blacktx , section__paragraph" id="tx64" style="margin-top: 2455vw; margin-left: 16vw; text-align: center;"> <b class="ALFRED">ALFRED</b> SHOOTS <br><b class="angier">ANGIER</b> AND <br>TELLS HIM ALL<br> ABOUT THE DOUBLES' <br>TRUTH </p>
+<p class="blacktx , section__paragraph" id="tx65" style="margin-top: 2493vw; margin-left: 40vw; text-align: center;"> <b class="angier">ANGIER</b> DIES </p>
+<p class="blacktx , section__paragraph" id="tx66" style="margin-top: 2515vw; margin-left: 35vw; text-align: center;">THANKS TO <b class="cutter">CUTTER</b><br><b class="ALFRED">ALFRED</b> AND HIS <br>DAUGHTER <b class="jess">JESS</b> ARE <br> BACK TOGETHER </p>
+     
+       
+    </div>
+ 
+ 
+  <div class="svg-container">
+      <img id="linee" src="png/SEMPLIFICATO nuovo.svg" style="width: 100vw;">
+  </div>
 
-<svg viewBox="0 0 1681 32768" fill="none">
-<g clip-path="url(#clip0_648_2)">
-<rect width="2000" height="38998" transform="scale(0.840248)" fill="url(#paint0_linear_648_2)"/>
-<rect x="1113.33" y="392.396" width="126.877" height="16054.6" fill="#2791A7"/>
-<rect x="1036.03" y="10064.5" width="668.838" height="72.2613" fill="#2590A6"/>
-<path d="M804.809 1393.56C804.809 1393.56 815.895 1352.13 812.52 1367.12C809.145 1382.12 820.025 1388.56 823.553 1372.88C827.081 1357.21 818.994 1400.96 818.994 1400.96L804.809 1393.56Z" stroke="#2891A7" stroke-width="7" stroke-linecap="round"/>
-<path d="M196.073 389.035V3379.89C196.073 4995.62 236.95 5112.91 41.0354 5169.03C-192.021 5235.79 -127.741 5980.52 -200.134 6244.69C-355.896 6813.08 -279.333 7062.44 -78.7104 7292.19C354.887 7788.75 -77.4529 8168.84 -135.851 8300.66C-158.627 8352.08 -53.4265 8803.23 -78.7103 9002.84C-91.9859 9107.65 -78.7102 9553.62 -78.7103 9614.96C-78.7104 9798.13 -61.3989 10862.2 -78.7103 11090L-78.7102 11851.7L-78.7102 12510.9L-78.7103 13439.4V13717.5L-78.7101 14090.5L-78.7123 14431.7L-78.7101 14788.8L-78.7108 15289.2L-78.7101 15916.4L-78.7123 16844.9V17646.9V18638.8V19774L-78.7086 20385.3L-78.7123 21583.9L-78.7086 22520.8V23822.7L-78.7128 24910L-78.7086 26148.5L-78.7166 26751.8L-57.9155 27313.1C64.7698 27379.1 186.195 27331.4 247.331 27313.1C485.98 27241.7 268.829 27599.8 299.853 27686.8C334.059 27782.8 418.505 27783.2 422.538 27894.8C426.572 28006.4 299.853 27972.2 299.853 28095.7V28764.6C299.853 28948.9 712.026 28845.3 712.026 28938.5C712.026 29031.6 299.853 28893.7 299.853 29065.9V29261C299.853 29478.4 1293.95 29507.5 1293.95 29792.1C1293.95 30076.7 1293.95 31242.5 1293.95 31540.9C1293.95 31782.8 1451.92 31961.3 1840.14 31992L1708.42 32213.4" stroke="#FF97F5" stroke-width="7" stroke-linecap="round"/>
-<rect x="135.28" y="383.993" width="126.877" height="2782.06" fill="#2791A7"/>
-<path d="M157.966 389.035C157.966 389.035 157.966 1849.28 157.966 1972.14C157.966 2095 244.904 2097.34 243.252 2143.63C241.15 2202.5 163.008 2171.15 158.387 2242.82V2514.77C158.387 2537.81 165.529 2545.49 185.695 2555.72C248.714 2577.48 407.941 2555.72 407.941 2612.68C407.941 2657.28 358.786 2670.27 289.046 2670.27C219.305 2670.27 94.5279 2662.59 98.309 2750.89C102.09 2839.2 99.1494 7401.66 99.1494 7431.1C105.031 7539.88 186.955 7628.19 186.955 7793.28C189.476 8033.24 101.67 8028.12 101.67 8103.63C101.67 8351.27 101.67 10166.7 101.67 10193.5C101.67 10220.4 154.186 10230.7 154.186 10285.1C154.186 10353.5 99.1493 10350.3 99.1493 10384.9C99.1493 10438.6 98.309 14976.8 98.309 15137.4C98.309 15298 -79.8236 15354.9 -79.8236 15354.9L-51.6753 20563.7C-51.6753 20563.7 260.057 20456.2 260.057 20640.5C260.057 20700.6 260.057 21080.1 260.057 21181.8C260.057 21283.6 518.433 21248.4 518.433 21313.7C518.433 21378.9 257.536 21339.3 257.536 21433.3C257.536 21527.4 257.536 21414.8 257.536 21569.6C249.554 21701.4 788.993 21629.1 788.993 21768C788.993 21906.8 249.554 21796.1 249.554 21987.5C249.554 22178.8 249.554 22558.9 249.554 22558.9V22727.8H-86.5456V32254.6" stroke="#693780" stroke-width="7" stroke-linecap="round"/>
-<rect x="102.51" y="383.993" width="126.877" height="1449.43" fill="#2791A7"/>
-<path d="M-199.139 383.153L-165.529 18130.9H752.022V18443.1H-165.529V32387.4" stroke="#523F9E" stroke-width="7" stroke-linecap="round"/>
-<rect x="-98.309" y="18089.7" width="847.81" height="399.118" fill="#79AFC4"/>
-<path d="M810.84 18466.1C810.84 18466.1 812.1 18426.8 812.1 18440.8C812.099 18454.7 823.443 18455.4 823.443 18440.8C823.443 18426.2 825.124 18466.1 825.124 18466.1L810.84 18466.1Z" stroke="#79AFC4" stroke-width="7" stroke-linecap="round"/>
-<path d="M467.027 392.396V1233.85C467.027 1333.67 630.186 1304.91 630.186 1365.4C630.186 1425.9 467.027 1406.62 467.027 1512.2V2169.68V2262.15C467.027 2319.1 187.207 2298.62 185.862 2352.37C184.518 2406.12 467.027 2381.81 467.027 2440.04L521.352 3337.16C521.352 3382.59 420.397 3391.93 420.397 3480.49C420.397 3569.05 521.352 3534.24 521.352 3613.59V3775.48C521.352 3908.58 521.352 4060.23 521.352 4202.92V6411.09C521.352 6574.94 639.131 6699.28 595.865 6974.9C561.835 7191.68 422.131 7318.7 363.827 7524.58C305.524 7730.46 363.827 7902.11 363.827 8144.63V8535.6C363.827 8636.45 363.827 8683.97 363.827 8740.68C363.827 8809.16 326.332 8849.49 261.895 8931.84C197.458 9014.18 184.793 9097.14 261.895 9136.02C328.537 9169.62 346.888 9272.98 271.82 9327.6C194.834 9383.61 215.104 9479.54 271.82 9521.27C309.502 9549 346.888 9569.02 346.888 9681.64V11665.9C346.888 12542.3 346.888 13144.7 346.888 13186.3C346.888 13316.2 417.879 13375.5 417.879 13466.6C417.879 13557.7 346.888 13567 346.888 13636.1V13933.7C346.888 14141.7 678.08 14018.2 678.08 14240.2C678.08 14351.5 678.08 14387.4 678.08 14444.3C678.08 14692 346.888 14545.4 346.888 14708.6V14956.2C346.888 15369 -40.833 15402.9 -107.203 15402.9V20146.4C-142.511 20177.2 290.376 20128 617.27 20179.6C919.133 20227.3 1123.87 20298.6 1079.9 20484.2C1035.94 20669.8 1118.13 20616 1096.57 20776L1042.8 21180.4C1022.21 21248.2 837.048 21258.6 840.745 21320.5C844.442 21382.5 1010.87 21378.1 990.289 21427.4L951.433 21598.3L914.257 21751.2C882.331 21883.7 1072.06 21865.1 1031.04 21962.4C942.448 22112.7 805.747 22234.8 879.111 22300.9C935.26 22351.4 1162.53 22327.3 1123.03 22423.7C1079.76 22529.3 365.508 22398.9 365.508 22535.5C365.508 22672 893.619 22693.8 1002 22778.3C1110.37 22862.8 1111.92 22991.8 909.149 23121.5C644.087 23291.1 380.493 23267.3 380.493 23395.1V24927C380.493 25147.1 726.395 25033.5 726.395 25165C726.395 25296.6 440.71 25214.9 440.71 25366.6C440.71 25454.9 354.165 25430.1 354.165 25509.5C354.165 25572 440.71 25543.2 440.71 25664.7V25801.7C440.71 25929.7 726.395 25833 726.395 25941.8C726.395 26050.6 526.957 25955.9 526.957 26099.2V26719.3C526.957 27013.6 526.957 27562 526.957 27710.5V28843.7V29426V29955.8H-36.3525V32371.4" stroke="#41327E" stroke-width="7" stroke-linecap="round"/>
-<rect y="29945.6" width="539.439" height="40.3319" fill="#BDE6EE"/>
-<path d="M519.273 29965.8C519.273 29965.8 521.048 29918.4 521.047 29935.2C521.047 29952 533.464 29952.8 533.464 29935.2C533.464 29917.6 535.238 29965.8 535.238 29965.8L519.273 29965.8Z" stroke="#BDE6EE" stroke-width="7" stroke-linecap="round"/>
-<path d="M1188.53 401.219C1188.53 656.234 1188.53 15376.2 1188.53 19645C1188.53 19812.2 1602.77 19966.8 1786.79 20016.4" stroke="#7D3EE3" stroke-width="7"/>
-<path d="M1120.01 0H1250.29L1243.61 16647H1113.33L1120.01 0Z" fill="url(#paint1_linear_648_2)"/>
-<path d="M778.91 392.396C778.91 392.396 775.969 2769.6 775.969 2828.47C775.969 2887.34 560.083 2879.29 560.446 2962.2C563.17 3044.55 775.129 3022.35 775.129 3122.18C775.129 3222 780.591 3846.53 780.591 4336.69C780.591 4657.92 1165.42 4534.2 1165.42 4713.37C1165.42 4892.54 784.792 4775.66 780.591 5122.48C776.389 5469.3 867.976 6594.23 867.976 6663.34C867.976 6732.45 772.188 6720.93 772.188 6947.45C772.188 7173.97 895.705 7077.99 895.705 7248.2C895.705 7418.41 496.587 7541.27 480.622 7725.56C476.421 7884.25 813.661 7786.99 853.692 7884.25C893.723 7981.52 847.81 8382.09 884.781 8448.64C921.752 8515.19 1009.14 8508.79 1009.14 8613.73C1009.14 8718.67 903.267 8770.42 781.431 8831.85C659.595 8893.28 504.989 8924.72 504.989 9074.45C504.989 9224.19 764.626 9153.8 822.603 9153.8C880.58 9153.8 913.35 9202.13 823.443 9280.5C733.537 9358.87 781.431 9752.74 781.431 9752.74C785.632 9815.45 952.135 9815.45 952.001 9876.88C951.868 9938.31 810.84 9945.99 790.674 9972.86C770.508 9999.74 781.431 10089.3 781.431 10131.6C781.431 10168.9 879.294 10164.8 881.42 10244.2C883.547 10323.5 843.437 10362.9 795.715 10383.7C743.532 10419.4 713.371 10441.3 713.371 10516.8C713.371 10592.3 746.427 10626.4 807.479 10658.8C878.036 10709.4 919.717 10754.8 920.912 10811.1C922.433 10882.8 900.175 10896.4 837.727 10927.6C783.689 10955.1 771.719 10980.2 772.188 11026.1C773.801 11065.3 785.101 11079.5 837.727 11133.6C887.855 11173.5 907.468 11192.5 911.669 11261.6C915.871 11330.7 800.757 11394.7 790.674 11471.5C780.591 11548.3 792.354 12729.9 792.354 12838.6C792.354 12947.3 1084.76 12917.1 1084.76 13016.2C1084.76 13115.2 777.23 12974 777.23 13149.3C777.23 13324.6 777.23 13529.4 777.23 13677.8C777.23 13826.3 417.603 13749.5 417.603 13862.1C417.603 13974.7 768.827 13903.1 768.827 14009.3C768.827 14115.5 767.987 14480.3 767.987 14480.3C767.987 14738.8 951.161 14600.2 951.161 14688C951.161 14775.8 767.147 14632.6 767.147 14864.2C767.147 15095.8 767.147 16117.2 767.147 16117.2C767.147 16185 766.726 16402.1 881 16639.9C995.274 16877.6 901.166 16838.9 901.166 17499.3C901.166 18159.6 913.77 19086.2 881 19203.9C848.231 19321.7 312.119 19509.3 -74.7821 19448.4V20180.4L-92.4273 23322.8C-35.2904 23501.9 820.923 23324 841.088 23635C842.307 23653.8 835.487 23935.3 839.408 24119.6C842.403 24260.4 1101.57 24190.5 1101.57 24289.9C1101.57 24389.3 839.408 24314.1 839.408 24465.1V26689.4C839.408 26804.6 648.252 26724.2 648.252 26827.9C648.252 26931.5 834.366 26850.7 839.408 26947.9C839.408 26947.9 843.609 28129.2 839.408 28237.9C835.207 28346.7 610.361 28271.7 608.34 28393.2C606.319 28514.8 834.366 28464.2 834.366 28551.5C834.366 28638.7 839.408 29691.8 839.408 29691.8V30795V32300" stroke="#523F9E" stroke-width="7" stroke-linecap="round"/>
-<rect x="817.562" y="30785.9" width="57.9771" height="1553.62" fill="#BDE6EE"/>
-<path d="M831.005 30807.7C831.005 30807.7 832.78 30759.1 832.779 30776.4C832.779 30793.6 845.71 30791.7 845.71 30776.4C845.71 30761 846.97 30807.7 846.97 30807.7L831.005 30807.7Z" stroke="#BDE6EE" stroke-width="7" stroke-linecap="round"/>
-<path d="M165.444 389.035V868.536C165.444 1059.29 165.444 1213.21 165.444 1290.64C165.444 1368.07 179.328 1513.96 270.476 1540.2C361.623 1566.43 658.755 1522.66 658.755 1596.89C658.755 1671.12 339.283 1597.79 339.283 1702.09C339.283 1702.09 339.283 1965.08 339.283 2053.27C339.283 2141.45 289.377 2087.3 289.377 2329.61V3352.8C289.377 3471.18 285.62 3668.53 289.377 3806.74C304.95 4379.6 339.283 5178.61 339.283 5178.61C339.283 5343.06 689.593 5569.59 689.593 5779.47C689.593 5989.35 243.096 6105.81 252.757 6283.06L242.31 6884.56C258.295 6998.46 37.6692 7073.33 40.6935 7290.89C43.7178 7508.45 41.9536 8226.2 40.6935 8557.87C44.4739 8763.28 177.292 8872.44 257.536 8939.4C327.697 8997.95 347.273 9083.3 272.156 9133.92C197.038 9184.53 201.239 9291.35 272.156 9327.6C316.774 9350.4 355.845 9449.01 272.156 9523.47C225.799 9564.71 229.29 9632.89 229.29 9691.76V10182.6C229.29 10227.3 201.567 10228.6 201.567 10283.7C201.567 10350.7 229.29 10345.1 229.29 10401.4V11855.9C229.29 11996.6 307.92 12037 430.907 12037C509.611 12037 575.398 12070.2 575.398 12138.6C575.398 12229 460.036 12223.9 423.766 12314.7C402.769 12367.2 426.87 12415.4 538.599 12475.6C650.328 12535.7 707.908 12553.6 700.767 12602.9C693.626 12652.2 575.398 12669.8 575.398 12753V15051.5C575.398 15381 179.725 15537.8 -102.538 15496.8V20221.8C-285.114 20367.7 585.06 20075.3 585.059 20457.3V20722.2C585.059 20953.2 585.059 20917.2 585.059 21037V21200.2C585.059 21297.4 720.731 21268.8 720.731 21326.3C720.731 21372.9 585.059 21365.9 585.059 21456.8V21962.3C585.059 22090.9 759.164 22104.7 759.164 22229.8C759.164 22354.8 585.059 22370.5 585.059 22474.8V23024.1C585.059 23234.5 125.121 23116.5 125.121 23399.5V25403C125.121 25515 261.212 25447.3 261.212 25550.2C261.212 25653 125.121 25621.2 125.121 25707.6V26672.5C125.121 26831.9 197.367 26790.3 197.367 26913.1C197.367 27036 125.121 26982.9 125.121 27137.7V27666.3C125.121 27801.9 287.675 27784.8 287.675 27890.2C287.675 27995.7 125.121 27940.1 125.121 28099.5V29405.5C125.121 29534.1 420.406 29460.4 420.406 29575.1C420.406 29675 125.121 29575.1 125.121 29727.4V29998.7C125.121 30308.4 458.859 30272.5 550.363 30272.5C612.528 30272.5 733.547 30277.7 696.955 30405C672.619 30489.7 527.681 30501.6 426.872 30650.1C303.265 30832.1 408.667 31216.1 604.381 31358.4C800.095 31500.8 1148.75 31401.3 1148.75 31617V31706.5C1148.75 32111.6 1639.37 32251.7 1856.11 32251.7V33836.7V37123.8" stroke="#31255E" stroke-width="7" stroke-miterlimit="10" stroke-linecap="round"/>
-<path d="M1859.47 10093.1H1043.89V10573C1043.89 10690.1 776.76 10657.3 775.08 10787.4C772.98 10949.9 940.132 10868.6 940.132 11012.6C940.132 11156.6 762.9 11150.2 775.08 11260.9C784.823 11349.5 843.606 11393.3 889.338 11426.6C935.069 11459.9 1011.56 11470.4 1019.95 11539.5V11838.1C1019.95 11988.5 669.674 11937.1 666.314 12048.7C662.954 12160.3 1019.96 12119.6 1019.95 12207.3V12388.4C1018.41 12490.4 1148.22 12695.6 1679.74 12700.7H1859.47V32387.4" stroke="#DB74FF" stroke-width="7"/>
-<rect x="1046.95" y="10064.5" width="668.838" height="47.8941" fill="#2590A6"/>
-<path d="M1177.52 402.479C1137.58 1009.33 970.482 1114.59 927.211 1353.22C904.947 1691.84 2011.77 1628.28 1822.74 1810.27C2125.57 7858.32 1617.75 10804.8 1910.11 16850.6C2202.48 22896.4 1718.56 32239.1 1718.56 32239.1C1730.88 32239.1 1757.21 32239.1 1763.93 32239.1C1770.65 32239.1 1766.73 32257.8 1763.93 32267.2" stroke="#7E71B5" stroke-width="7" stroke-linecap="round"/>
-<rect x="791.514" y="1379.69" width="1119.21" height="469.699" fill="#2791A7"/>
-<path d="M1293.45 413.402L1293.45 5499.14C1293.45 5707.09 1038.87 5652.9 1038.87 5957.28C1038.87 6268.26 1293.45 6210.67 1293.45 6405.84L1293.45 8350.41C1293.45 8534.7 1135.49 8482.23 1135.49 8647.32C1135.49 8790.69 1293.45 8733.7 1293.45 8840.56L1293.45 9090.75C1293.45 9289.11 1038.13 9147.78 1038.13 9265.42C1038.13 9375.49 1293.45 9246.24 1293.45 9375.49L1293.45 9721.67C1293.45 9856.89 1293.45 10096 1293.45 10149.7C1293.45 10230.4 1212.37 10222.7 1212.37 10338.5C1212.37 10454.2 1293.45 10412.1 1293.45 10499.1L1293.45 10747.4C1293.45 10918.9 1105.25 11065.8 1105.25 11218.3C1105.25 11473.6 1313.31 11413.5 1293.45 11526.1C1273.59 11638.7 470.539 11583.2 470.539 11687.4C470.539 11791.6 1272.98 11734.5 1293.45 11824.9C1313.92 11915.4 1293.45 12493.2 1293.45 12625.4L1305.33 12854.1C1305.33 12948.2 1254.91 12981.8 1254.91 13026.8C1254.91 13071.7 1307.55 13096.5 1363.72 13117.1C1462.03 13153.2 1479.26 13246.9 1401.95 13282.2C1324.65 13317.5 803.622 13309.1 690.198 13421.4C643.015 13468.1 708.681 13517.4 803.622 13528.3L941.412 13557.7C1021.65 13576.3 1025.43 13739.2 1025.43 13783L1025.43 14898.9C1025.43 15380.7 728.342 15578.2 -132.341 15572L-132.341 19997.4C-78.1431 20060.5 1397.33 19936.6 1397.33 20359.6C1397.33 20562.6 1191.06 20439.1 1257.03 20659.1C1262.14 20676.1 1272.15 20702.6 1269.21 20732.6L1235.59 21204.2C1228.86 21263.7 1075.78 21273.7 1076.79 21308.5C1077.8 21343.3 1161.65 21339.2 1191.06 21385.9L1235.59 21461.5C1253.99 21489 1352.36 21716.2 1352.36 21970.2C1352.36 22224.1 1297.76 22888.4 1297.76 22888.4C1242.31 23477.4 633.486 23246.7 633.486 23520.2L633.486 24584.7C633.486 24674.9 512.5 24606.7 512.5 24674.9C512.5 24754.6 633.486 24701.6 633.486 24769.7C633.486 24875.5 470.909 24848.3 -165.53 24848.3L-146.625 32376.4" stroke="#B24FC2" stroke-width="7" stroke-linecap="round"/>
-<rect x="1248.61" y="380.632" width="126.877" height="3945.81" fill="#2791A7"/>
-<path d="M1524.87 389.035V1097.39C1524.87 1285.52 1132.21 1245.82 1132.21 1356.55C1132.21 1467.28 1524.87 1418.62 1524.87 1579.87V3295.42V4233.5V4581.87C1524.87 4663.14 1347.3 4598 1347.3 4693.21C1347.3 4788.43 1524.87 4732.25 1524.87 4812.23C1524.87 4930.66 1524.87 5247.09 1524.87 5347.55V5508.16V5669.57C1524.87 5839.79 1234.32 5767.88 1234.32 5922.49C1234.32 6077.1 1524.87 5978.79 1524.87 6287.58V6491.03C1524.87 6623.62 1524.87 6874.33 1524.87 7041.34V9399.34C1524.87 9543.31 477.681 9415.63 477.681 9530.52C477.681 9645.4 1524.87 9518.33 1524.87 9638.66V9815.27C1524.87 9927.89 1113.02 9821.92 1118.4 9927.89C1123.78 10033.9 1524.87 9985.48 1524.87 10090.4C1524.87 10158.9 1333.08 10192.5 1333.08 10317.6C1333.08 10419.3 1524.87 10387.3 1524.87 10521.1V10716.9C1524.87 13118.8 1524.87 13672.3 1524.87 13648.9C1524.87 13846.6 831.132 13711.4 834.829 13846.6C838.526 13981.7 1524.87 13846.6 1524.87 13986.1V15283.1C1521.01 15366.5 1550.19 15533.3 1697.73 15533.3V23131.4C1706.97 23174.7 1530.53 23180.7 1530.53 23277.3V24151.3C1530.53 24272.2 1265.02 24182.3 1265.02 24284.5C1265.02 24400 1530.53 24284.5 1530.53 24454.7V25721C1530.53 25867.6 981.83 25780.1 981.83 25943.1C981.83 26106.1 1530.53 26001.9 1530.53 26148.5V28788.7C1530.53 28949.9 960.021 28813.8 960.021 28949.9C960.021 29086.1 1530.53 28912.8 1530.53 29111.2V31159.5C1530.53 31338.6 1447.76 31332.2 1447.76 31485.8C1447.76 31639.4 1712.43 31802.6 1863.67 31802.6" stroke="#6855AF" stroke-width="7" stroke-linecap="round"/>
-<line x1="814.201" y1="24671.8" x2="879.74" y2="24671.8" stroke="#BDE6EE" stroke-width="7"/>
-<line x1="826.804" y1="24715.5" x2="892.344" y2="24715.5" stroke="#BDE6EE" stroke-width="7"/>
-<line x1="814.201" y1="24754.1" x2="879.74" y2="24754.1" stroke="#BDE6EE" stroke-width="7"/>
-<line x1="819.242" y1="25211.2" x2="884.781" y2="25211.2" stroke="#BDE6EE" stroke-width="7"/>
-<line x1="831.005" y1="25162.5" x2="896.545" y2="25162.5" stroke="#BDE6EE" stroke-width="7"/>
-<line x1="814.201" y1="24801.2" x2="879.74" y2="24801.2" stroke="#BDE6EE" stroke-width="7"/>
-<line x1="814.201" y1="24845.7" x2="879.74" y2="24845.7" stroke="#BDE6EE" stroke-width="7"/>
-<line x1="814.201" y1="24891.9" x2="879.74" y2="24891.9" stroke="#BDE6EE" stroke-width="7"/>
-<line x1="814.201" y1="24936.5" x2="879.74" y2="24936.5" stroke="#BDE6EE" stroke-width="7"/>
-<line x1="814.201" y1="24981" x2="879.74" y2="24981" stroke="#BDE6EE" stroke-width="7"/>
-<line x1="814.201" y1="25026.4" x2="879.74" y2="25026.4" stroke="#BDE6EE" stroke-width="7"/>
-<line x1="814.201" y1="25070.9" x2="879.74" y2="25070.9" stroke="#BDE6EE" stroke-width="7"/>
-<line x1="814.201" y1="25115.4" x2="879.74" y2="25115.4" stroke="#BDE6EE" stroke-width="7"/>
-<line x1="808.319" y1="25646.5" x2="873.858" y2="25646.5" stroke="#BDE6EE" stroke-width="7"/>
-<line x1="808.319" y1="25699.4" x2="873.858" y2="25699.4" stroke="#BDE6EE" stroke-width="7"/>
-<line x1="824.284" y1="25750.7" x2="871.337" y2="25750.7" stroke="#BDE6EE" stroke-width="7"/>
-<line x1="805.798" y1="25803.6" x2="871.337" y2="25803.6" stroke="#BDE6EE" stroke-width="7"/>
-<line x1="805.798" y1="25856.5" x2="871.337" y2="25856.5" stroke="#BDE6EE" stroke-width="7"/>
-<line x1="831.846" y1="25910.3" x2="852.012" y2="25910.3" stroke="#BDE6EE" stroke-width="7"/>
-<line x1="819.242" y1="25593.5" x2="884.781" y2="25593.5" stroke="#BDE6EE" stroke-width="7"/>
-<line x1="819.242" y1="25538.9" x2="884.781" y2="25538.9" stroke="#BDE6EE" stroke-width="7"/>
-<line x1="808.319" y1="25485.1" x2="873.858" y2="25485.1" stroke="#BDE6EE" stroke-width="7"/>
-<line x1="812.52" y1="25424.7" x2="878.059" y2="25424.7" stroke="#BDE6EE" stroke-width="7"/>
-<line x1="812.52" y1="25373.4" x2="878.059" y2="25373.4" stroke="#BDE6EE" stroke-width="7"/>
-<line x1="799.076" y1="25316.3" x2="864.615" y2="25316.3" stroke="#BDE6EE" stroke-width="7"/>
-<line x1="812.52" y1="25263.3" x2="878.059" y2="25263.3" stroke="#BDE6EE" stroke-width="7"/>
-<rect x="-2.52074" y="22717" width="352.904" height="21.0062" fill="#79AFC4"/>
-<path d="M333.579 22737.1C333.579 22737.1 335.26 22695.5 335.259 22710.3C335.259 22725 347.022 22725.7 347.023 22710.3C347.023 22694.8 348.703 22737.1 348.703 22737.1L333.579 22737.1Z" stroke="#79AFC4" stroke-width="7" stroke-linecap="round"/>
-</g>
-<defs>
-<linearGradient id="paint0_linear_648_2" x1="1000" y1="0" x2="1000" y2="38998" gradientUnits="userSpaceOnUse">
-<stop offset="0.149818" stop-color="#2791A7"/>
-<stop offset="0.486026" stop-color="#238FA5"/>
-<stop offset="0.509109" stop-color="#79B0C4"/>
-<stop offset="0.709473" stop-color="#79B0C4"/>
-<stop offset="0.73935" stop-color="#BDE6EE"/>
-<stop offset="1" stop-color="#BDE6EE"/>
-</linearGradient>
-<linearGradient id="paint1_linear_648_2" x1="1561.85" y1="0" x2="1561.85" y2="32759.3" gradientUnits="userSpaceOnUse">
-<stop offset="0.149818" stop-color="#2791A7"/>
-<stop offset="0.486026" stop-color="#238FA5"/>
-<stop offset="0.509109" stop-color="#79B0C4"/>
-<stop offset="0.709473" stop-color="#79B0C4"/>
-<stop offset="0.73935" stop-color="#BDE6EE"/>
-<stop offset="1" stop-color="#BDE6EE"/>
-</linearGradient>
-<clipPath id="clip0_648_2">
-<rect width="2000" height="38998" fill="white" transform="scale(0.840248)"/>
-</clipPath>
-</defs>
-</svg>
-
-                
-                
  <!-- CLUE COUNTER -->
  <span id="clueCounter">0</span>
  <div id="explainCounter">Spiegazioni contatore indizi</div>
  <img id= "lente" src="png/lente.png" alt="Img lente clue counter">
+ 
+<!-- PARTE FINALE -->
+<!-- SCRITTE -->
+<div style=" background: linear-gradient(#BDE6EE,#ffffff); height: 2150px; width: 100%; position: relative; margin-top: -4px;"> 
+    
+   <h1 class="letspot , header__text">
+    AS A GREAT MAGICIAN ONCE SAID 
+   </h1>
+
+   <h1 class="asagreat , section__paragraph">
+   </h1>
+
+   <h1 class="Younever , section__paragraph" style="font-size: 40px;">
+    Every magic trick has a third act, <br> the hardest part,  the part we call 'The Prestige'. <br>
+    Making something disappear isn't enough: <br> you have to <b class="special-text">bring it back.</b>
+    </h1>
+
+<!-- UCCELLO -->
+
+<!-- <image  id="Uccello" alt="Uccello" src="png/UCCELLO.png" style="position: absolute; margin-top: 1400px; left:50%; transform: translate(-50%,-50%); width: 40%; height: auto;"> -->
+<img id="hat-image" src="png/cappello all'ingiù.png" style="position: absolute; margin-top: 1250px; left:50%; transform: translate(-50%,-50%); width: 35%; height: auto; z-index: 6;">
+      
+<div class="bounce"></div>
+</div>
+
+
+    
+
+    <!--<img id="nuovoCappelloImg" src="png/cappello all'ingiù.png" alt="Nuovo Cappello" 
+    style="position: absolute; margin-top: 1600px; left:50%; transform: translate(-50%,-50%); width: 35%; height: auto;" />
+    -->
+
+    <!-- <script>
+
+const movingBird = document.getElementById('Uccello');
+
+function updateBirdPosition() {
+  const scrollY = window.scrollY;
+  const scrollPercentage = scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+  const y = 100 * scrollPercentage;  // velocità pallina
+  let opacity;
+
+  if (y < 300) {
+    opacity = 0 ; // Calcola l'opacità in base alla coordinata y della pallina e alla posizione superiore dell'immagine del cappello
+  } else {
+    opacity = 1; // Rendi la pallina completamente invisibile quando raggiunge l'immagine del cappello
+  }
+  if (!textAnimationStarted) {
+      
+      textAnimationStarted = true;
+    }
+
+  // Muovi la pallina in assoluto senza tener conto dell'SVG
+  gsap.to(movingBird, { duration: 0.5, attr: { cy: y * 3000}, opacity: opacity });
+
+  if (y >= 1) {
+    movingBird.style.visibility = 'visible';
+  }
+}
+
+window.onscroll = updateBirdPosition;
+
+    </script> -->
+
+</div>  
+
+
+
 
 <!-- Collegamento al file JavaScript -->
 <script src="script.js"></script>
