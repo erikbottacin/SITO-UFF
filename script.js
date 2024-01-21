@@ -65,53 +65,60 @@ let observer2 = new IntersectionObserver(entries => {
 
 observer2.observe(textWrapper2);
 
- // CAPPELLO
- const newSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
- newSVG.setAttribute('id', 'newSVG');
- newSVG.setAttribute('width', '500');
- newSVG.setAttribute('height', '339');
- newSVG.setAttribute('viewBox', '0 0 500 360');
- newSVG.setAttribute('style', 'position: absolute; margin-top: 300px; left:50%; transform: translate(-50%,-50%)')
- newSVG.innerHTML = `
-     <ellipse cx="249" cy="41.5" rx="249" ry="41.5" fill="#D9D9D9"/>
-     <rect  x="58" y="19" width="380" height="339" rx="17" fill="#D9D9D9"/>
- `;
- 
- document.body.appendChild(newSVG);
- newSVG.style.position = 'absolute';
- newSVG.style.top = '1000px';
+//ANIMAZIONE PALLINA E UCCELLO
+const movingCircle = document.getElementById('movingCircle');
+const Uccello = document.getElementById('Uccello');
 
-//ANIMAZIONE PALLINA
- const movingCircle = document.getElementById('movingCircle');
- let textAnimationStarted = false;
+function updatePosition() {
+  const scrollY = window.scrollY;
+  const scrollPercentage = scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+  const y = 25000 * scrollPercentage;  // velocità pallina
+  const cappelloImg = document.getElementById('cappelloImg');
+  const cappelloTop = cappelloImg.offsetTop;
+  let opacity;
 
- function updateCirclePosition() {
-     const scrollY = window.scrollY;
-     const scrollPercentage = scrollY / (document.documentElement.scrollHeight - window.innerHeight);
-     const y = 25000 * scrollPercentage;  // velocità pallina
-     const newSVGTop = parseInt(newSVG.style.top, 10);
-     let opacity;
+  if(scrollY< 20000){
+  
+  if (scrollY < 1000) {
+    opacity = 1 - (y + 68) / (cappelloTop); // Calcola l'opacità in base alla coordinata y della pallina e alla posizione superiore dell'immagine del cappello
+  } else {
+    opacity = 0; // Rendi la pallina completamente invisibile quando raggiunge l'immagine del cappello
+  }
 
-     if (y + 68 < newSVGTop + 100) {
-         opacity = 1 - (y + 68) / (newSVGTop); // Calcola l'opacità in base alla coordinata y del cerchio e alla posizione superiore dell'elemento newSVG
-     } else {
-         opacity = 0; // Rendi il cerchio completamente invisibile quando raggiunge l'elemento newSVG
-         if (!textAnimationStarted) {
-             startTextAnimation();
-             textAnimationStarted = true;
-         }
-     }
-     
-     gsap.to(movingCircle, { duration: 0.5, attr: { cy: y + 68 }, opacity: opacity });
-     
-     if (y + 68 >= 1000) {
-         movingCircle.style.visibility = 'visible';
-     }
- }
+  // Muovi la pallina in assoluto senza tener conto dell'SVG
+  gsap.to(movingCircle, { duration: 0.5, attr: { cy: y + 68 }, opacity: opacity });
 
- window.onscroll = updateCirclePosition;
+  if (y + 68 >= 1000) {
+    movingCircle.style.visibility = 'visible';
+  }
+}
 
-//ANIMAZIONE TESTI PARAGRAFI PARTE INIZIALE
+else {
+
+  if (scrollY < 42200) {
+    opacity = 0 ; // Calcola l'opacità in base alla coordinata y della pallina e alla posizione superiore dell'immagine del cappello
+  } else if(scrollY < 42570) {
+    opacity = ((scrollY-42200)/500); // Rendi la pallina completamente invisibile quando raggiunge l'immagine del cappello
+  }
+  else {
+opacity = 1;
+
+  }
+  // Muovi la pallina in assoluto senza tener conto dell'SVG
+  gsap.to(Uccello, { duration: 0.5, attr: { cy: y + 68}, opacity: opacity });
+
+  if (y >= 36000) {
+    Uccello.style.visibility = 'visible';
+  }
+
+}
+
+}
+
+window.onscroll = updatePosition;
+
+
+//ANIMAZIONE TESTI PARAGRAFI PARTE INIZIALE E FINALE
 const paragraphs = document.querySelectorAll(".section__paragraph, .header__text");
 
 document.addEventListener("scroll", function() {
@@ -128,6 +135,7 @@ function isInView(element) {
         rect.bottom > 0 && rect.top < (window.innerHeight - 150 || document.documentElement.clientHeight - 150)
     );
 }
+
 
 //ANIMAZIONE LAMPADINE
 document.addEventListener("DOMContentLoaded", function() {
@@ -242,42 +250,42 @@ function pad(num) {
 }
 
 // VECCHIA ANIMAZIONE LINEE
-// window.addEventListener('scroll', function() {
-//   let lineContainer = document.querySelector('.line-container');
-//   let startPosition = lineContainer.offsetTop;
-//   let pageHeight = document.documentElement.scrollHeight;
-//   let scrollPosition = window.scrollY;
+window.addEventListener('scroll', function() {
+  let lineContainer = document.querySelector('.line-container');
+  let startPosition = lineContainer.offsetTop;
+  let pageHeight = document.documentElement.scrollHeight;
+  let scrollPosition = window.scrollY;
 
-//   let paths = document.querySelectorAll('svg path');
+  let paths = document.querySelectorAll('svg path');
 
-//   paths.forEach((path) => {
-//       let pathLength = path.getTotalLength();
-//       path.style.strokeDasharray = pathLength + ' ' + pathLength;
-//       path.style.strokeDashoffset = pathLength;
+  paths.forEach((path) => {
+      let pathLength = path.getTotalLength();
+      path.style.strokeDasharray = pathLength + ' ' + pathLength;
+      path.style.strokeDashoffset = pathLength;
 
-//       if (scrollPosition >= startPosition) {
-//           // Il tuo codice da eseguire quando lo scroll raggiunge la posizione desiderata
+      if (scrollPosition >= startPosition) {
+          // Il tuo codice da eseguire quando lo scroll raggiunge la posizione desiderata
 
-//           // Calcola la percentuale di completamento del disegno
-//           let scrollPercentage = Math.min(1, (scrollPosition - startPosition) / (pageHeight - startPosition));
+          // Calcola la percentuale di completamento del disegno
+          let scrollPercentage = Math.min(1, (scrollPosition - startPosition) / (pageHeight - startPosition));
 
-//           // Riduci la velocità regolando il valore seguente
-//           let drawLength = pathLength * scrollPercentage; // Puoi regolare il divisore per controllare la velocità
+          // Riduci la velocità regolando il valore seguente
+          let drawLength = pathLength * scrollPercentage; // Puoi regolare il divisore per controllare la velocità
 
-//           // Disegna il tratto
-//           path.style.strokeDashoffset = pathLength - drawLength;
-//       } else {
-//           // Il tuo codice da eseguire quando lo scroll è al di sopra della posizione desiderata
-//           path.style.strokeDashoffset = pathLength;
-//       }
-//   });
+          // Disegna il tratto
+          path.style.strokeDashoffset = pathLength - drawLength;
+      } else {
+          // Il tuo codice da eseguire quando lo scroll è al di sopra della posizione desiderata
+          path.style.strokeDashoffset = pathLength;
+      }
+  });
 
-//   if (scrollPosition >= startPosition) {
-//       document.querySelector('.line-container').classList.add('show-line');
-//   } else {
-//       document.querySelector('.line-container').classList.remove('show-line');
-//   }
-// });
+  if (scrollPosition >= startPosition) {
+      document.querySelector('.line-container').classList.add('show-line');
+  } else {
+      document.querySelector('.line-container').classList.remove('show-line');
+  }
+});
 
 //ANIMAZIONE RETTANGOLO MASCHERA
 // document.addEventListener("scroll", function() {
@@ -301,6 +309,7 @@ function pad(num) {
 // });
 
 
+
 //ANIMAZIONE CLUE COUNTER
 document.addEventListener('DOMContentLoaded', function () {
   hideClueCounter();
@@ -311,45 +320,67 @@ let currentScrollY;
 let direction;
 
 let points = [
-  { id: 1, top: 6000, visited: false, explanation: "Spiegazione clue 1" },
-  { id: 2, top: 7000, visited: false, explanation: "Spiegazione clue 2" },
-  { id: 3, top: 8000, visited: false, explanation: "Spiegazione clue 3" },
-  { id: 4, top: 9000, visited: false, explanation: "Spiegazione clue 4" },
-  // aggiungere qua i punti, top definisce a che altezza
+  { id: 0, top: 6200, visited: false, explanation: "He doesn't know which knot he tied because it was his twin." },
+  { id: 1, top: 8000,  visited: false, explanation: "He doesn't love her; it's his twin who loves her." },
+  { id: 2, top: 16000,  visited: false, explanation: "Cutter says that the trick involves the use of a double." },
+  { id: 3, top: 16700,  visited: false, explanation: "It was his twin who had said no." },
+  { id: 4, top: 18800, visited: false, explanation: "Borden himself tells Root that he uses a double in his trick." },
+  { id: 5, top: 25500,  visited: false, explanation: "He's not always the person Sarah knows, as it's his twin." },
+  { id: 6, top: 28200,  visited: false, explanation: "In this scene, it's truly Alfred, and therefore the love is authentic." },
+  { id: 7, top: 28900,  visited: false, explanation: "Alfred asks his twin to assure Sarah that he loves her." },
+  { id: 8, top: 29600, bottom: 40000, visited: false, explanation: "Sarah talks to the twin that doesn't love her, but she is unaware of it." },
 ];
 
 let pointCounter = 0;
 
-let clueCounterVisible = false; // Aggiunta variabile per gestire la visibilità del clue counter
+let clueCounterVisible = false; // Variabile per gestire la visibilità del clue counter
 
 function onScroll() {
-  const scrollTop = window.pageYOffset;
+  const scrollTop = window.scrollY;
+  const explainCounterElement = document.getElementById('explainCounter');
+  const fineCounter = 40000; //quando deve sparire il clue counter
 
   if (currentScrollY === scrollTop) return;
 
   previousScrollY = currentScrollY;
   currentScrollY = scrollTop;
 
-  if (!clueCounterVisible && currentScrollY >= points[0].top) {
+  if (!clueCounterVisible && (currentScrollY >= points[0].top)) {
     showClueCounter();
   }
 
   if (currentScrollY > previousScrollY) {
     direction = "down";
     checkPoints();
+    if((currentScrollY >= points[0].top) && (currentScrollY < points[8].bottom)){
+      explainCounterElement.classList.add('show');
+    }
+    else {
+      explainCounterElement.classList.remove('show'); 
+    }
   } else if (currentScrollY < previousScrollY) {
     direction = "up";
-    if (currentScrollY < points[0].top) {
+    if ((currentScrollY < points[0].top) || (currentScrollY >= 40000)) {
+      explainCounterElement.classList.remove('show');
       hideClueCounter(); // Nasconde il clue counter se torni indietro prima del punto 1
+       // Nasconde l'explain counter se torni indietro
     } else {
+      explainCounterElement.classList.add('show');
       removePoints();
+       // Nasconde l'explain counter se torni indietro
     }
   }
+
+  if (currentScrollY >= fineCounter) {
+    hideClueCounter();
+  }
+
 }
 
 function showClueCounter() {
   const counterElement = document.getElementById('clueCounter');
   const lenteElement = document.getElementById('lente');
+  
 
   if (counterElement && lenteElement) {
     counterElement.style.display = 'block';
@@ -371,7 +402,7 @@ function hideClueCounter() {
 
 function checkPoints() {
   points.forEach(point => {
-    if (!point.visited && point.top <= currentScrollY) {
+    if (!point.visited && (point.top <= currentScrollY)) {
       console.log(`Point ${point.id} reached!`);
       point.visited = true;
       pointCounter++; // Incrementa il contatore
@@ -405,25 +436,38 @@ function updateCounter() {
       }
     });
 
-    // Mostra #explainCounter quando il puntatore passa sopra a #clueCounter
     counterElement.addEventListener('mouseover', function () {
+      explainCounterElement.textContent = "Clue counter: highlights the clues provided throughout the movie.";
       explainCounterElement.classList.add('show');
     });
 
-    // Nascondi #explainCounter quando il puntatore esce da #clueCounter
+    // Nasconde #explainCounter quando il puntatore esce da #clueCounter
     counterElement.addEventListener('mouseout', function () {
       explainCounterElement.classList.remove('show');
     });
 
-    // Mostra #explainCounter per 3 secondi quando pointCounter viene incrementato
-    if (pointCounter > 0) {
+    // Controlla la posizione verticale per mostrare/nascondere #explainCounter
+    
+
+    // Verifica se almeno un punto è stato raggiunto e mostra l'explainCounter
+    if (currentScrollY >= points[0].top) {
       explainCounterElement.classList.add('show');
-      setTimeout(() => {
-        explainCounterElement.classList.remove('show');
-      }, 3000); // Nascondi dopo 3 secondi (3000 millisecondi)
-    } else {
-      // Nascondi #explainCounter quando pointCounter è 0
+    } 
+    else if (currentScrollY < points[0].top) {
       explainCounterElement.classList.remove('show');
+    } 
+    else if (currentScrollY <= points[8].bottom) {
+      explainCounterElement.classList.add('show');
+    } 
+    else if (currentScrollY > points[8].bottom) {
+      explainCounterElement.classList.add('show');
+    } 
+    // Verifica se un nuovo punto è stato raggiunto
+    if (pointCounter > 0 && points[pointCounter - 1].visited) {
+      // Mostra l'explainCounter quando un nuovo punto viene raggiunto
+      explainCounterElement.classList.add('show');
+
+    
     }
   }
 }
