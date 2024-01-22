@@ -1,4 +1,3 @@
-
     // ANIMAZIONE TESTO "THE PRESTIGE UNVEILED"
     var textWrapper = document.querySelector('.sottotitolo1');
     textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
@@ -12,7 +11,6 @@
         delay: (el, i) => 60 * (i+1)
       });
       
-
       let fatto = true;
       const observer1 = new IntersectionObserver(entries => {
           entries.forEach(entry => {
@@ -23,7 +21,7 @@
                   fatto = false;
                   anime.timeline({loop: false})
 
-//modificare questo per velocità seconda animazione
+//velocità seconda animazione
   .add({
   targets: '.sottotitolo .letter',
   opacity: [0,1],
@@ -31,15 +29,11 @@
   duration: 1500,
   delay: (el, i) => 40 * (i+1)
 });
-                   // if we added the class, exit the function
-              }
-
-              // We're not intersecting, so remove the class!
-              
+              }        
           });
       });
 
-      observer1.observe(document.querySelector('.sottotitolo-wrapper'));
+  observer1.observe(document.querySelector('.sottotitolo-wrapper'));
 
 // ANIMAZIONE TESTO "DID YOU WATCH IT CLOSELY?" 
 let textWrapper2 = document.querySelector('.sottotitolo');
@@ -48,7 +42,7 @@ textWrapper2.innerHTML = textWrapper2.textContent.replace(/\S/g, "<span class='l
 // Imposta l'opacità iniziale a 0
 textWrapper2.style.opacity = 0;
 
-let animationExecuted = false; // Variabile di controllo per verificare se l'animazione è già stata eseguita
+let animationExecuted = false; // Variabile per verificare se l'animazione è già stata eseguita
 
 let observer2 = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -58,7 +52,7 @@ let observer2 = new IntersectionObserver(entries => {
       // Imposta l'opacità finale a 1 durante l'animazione
       textWrapper2.style.opacity = 1;
       
-      animationExecuted = true; // Imposta la variabile di controllo a true per indicare che l'animazione è stata eseguita
+      animationExecuted = true; // Imposta la variabile a true per indicare che l'animazione è stata eseguita
     }
   });
 }, { threshold: 1 });
@@ -117,7 +111,6 @@ opacity = 1;
 
 window.onscroll = updatePosition;
 
-
 //ANIMAZIONE TESTI PARAGRAFI PARTE INIZIALE E FINALE
 const paragraphs = document.querySelectorAll(".section__paragraph, .header__text");
 
@@ -136,7 +129,6 @@ function isInView(element) {
     );
 }
 
-
 //ANIMAZIONE LAMPADINE
 document.addEventListener("DOMContentLoaded", function() {
   var lampadinaImg = document.getElementById("lampadinaImg");
@@ -144,7 +136,6 @@ document.addEventListener("DOMContentLoaded", function() {
   window.addEventListener("scroll", function() {
     var scrollPosition = window.scrollY;
 
-    // Modifica la condizione a seconda di quando vuoi che avvenga la transizione
     if (scrollPosition > 2000) {
       lampadinaImg.src = "png/lampadine accese.png";
     } else {
@@ -290,7 +281,6 @@ let points = [
   { id: 9, top: 29300, bottom: 30000, visited: false, explanation: "Sarah talks to Freddie, who doesn't love her, but she is unaware of it." },
 ];
 
-
 let pointCounter = 0;
 
 let clueCounterVisible = false; // Variabile per gestire la visibilità del clue counter
@@ -340,7 +330,6 @@ function onScroll() {
 function showClueCounter() {
   const counterElement = document.getElementById('clueCounter');
   const lenteElement = document.getElementById('lente');
-  
 
   if (counterElement && lenteElement) {
     counterElement.style.display = 'block';
@@ -405,9 +394,6 @@ function updateCounter() {
     counterElement.addEventListener('mouseout', function () {
       explainCounterElement.classList.remove('show');
     });
-
-    // Controlla la posizione verticale per mostrare/nascondere #explainCounter
-    
 
     // Verifica se almeno un punto è stato raggiunto e mostra l'explainCounter
     if (currentScrollY >= points[0].top) {
