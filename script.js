@@ -249,66 +249,24 @@ function pad(num) {
   return num < 10 ? '0' + num : num;
 }
 
-// VECCHIA ANIMAZIONE LINEE
-// window.addEventListener('scroll', function() {
-//   let lineContainer = document.querySelector('.line-container');
-//   let startPosition = lineContainer.offsetTop;
-//   let pageHeight = document.documentElement.scrollHeight;
-//   let scrollPosition = window.scrollY;
+//HOVER LINEE
+document.addEventListener('DOMContentLoaded', function () {
+  const svgPaths = document.querySelectorAll('.svg-path');
+  const hoverRectangles = document.querySelectorAll('.hover-rectangle');
 
-//   let paths = document.querySelectorAll('svg path');
+  svgPaths.forEach((path, index) => {
+      path.addEventListener('mouseenter', (event) => {
+        const { clientX, clientY } = event;
+        hoverRectangles[index].style.display = 'block';
+        hoverRectangles[index].style.left = `${clientX}px`;
+        hoverRectangles[index].style.top = `${clientY}px`; 
+      });
 
-//   paths.forEach((path) => {
-//       let pathLength = path.getTotalLength();
-//       path.style.strokeDasharray = pathLength + ' ' + pathLength;
-//       path.style.strokeDashoffset = pathLength;
-
-//       if (scrollPosition >= startPosition) {
-//           // Il tuo codice da eseguire quando lo scroll raggiunge la posizione desiderata
-
-//           // Calcola la percentuale di completamento del disegno
-//           let scrollPercentage = Math.min(1, (scrollPosition - startPosition) / (pageHeight - startPosition));
-
-//           // Riduci la velocità regolando il valore seguente
-//           let drawLength = pathLength * scrollPercentage; // Puoi regolare il divisore per controllare la velocità
-
-//           // Disegna il tratto
-//           path.style.strokeDashoffset = pathLength - drawLength;
-//       } else {
-//           // Il tuo codice da eseguire quando lo scroll è al di sopra della posizione desiderata
-//           path.style.strokeDashoffset = pathLength;
-//       }
-//   });
-
-//   if (scrollPosition >= startPosition) {
-//       document.querySelector('.line-container').classList.add('show-line');
-//   } else {
-//       document.querySelector('.line-container').classList.remove('show-line');
-//   }
-// });
-
-//ANIMAZIONE RETTANGOLO MASCHERA
-// document.addEventListener("scroll", function() {
-//   var triggerPoint = 4400;
-//   var rectangularBox = document.querySelector(".rectangular-box");
-  
-//   // Modifica la posizione del rettangolo basata sulla posizione dello scroll
-//   rectangularBox.style.bottom = scrollPosition + "px";
-
-//   if (scrollPosition > triggerPoint) {
-//     conditionalRectangle.classList.add("show");
-//   } else {
-//     conditionalRectangle.classList.remove("show");
-//   }});
-
-// window.addEventListener('scroll', function() {
-//   const scrollY = window.scrollY;
-//   const scrollPercentage = scrollY / (document.documentElement.scrollHeight - window.innerHeight);
-//   const newHeight = 143 + (9812 - 143) * scrollPercentage; // replace 143 and 9812 with the initial and final heights
-//   document.getElementById('maskRect').setAttribute('height', newHeight);
-// });
-
-
+      path.addEventListener('mouseleave', () => {
+          hoverRectangles[index].style.display = 'none';
+      });
+  });
+});
 
 //ANIMAZIONE CLUE COUNTER
 document.addEventListener('DOMContentLoaded', function () {
@@ -324,11 +282,12 @@ let points = [
   { id: 1, top: 8000,  visited: false, explanation: "Freddie doesn't love Sarah; it's his twin Alfred who loves her." },
   { id: 2, top: 14650,  visited: false, explanation: "Olivia tells Angier the trick involves the use of a double." },
   { id: 3, top: 15750,  visited: false, explanation: "Angier asks how the trick was made again, and Cutter replies." },
-  { id: 4, top: 18300, visited: false, explanation: "Borden himself tells Root that he uses a double in his trick." },
-  { id: 5, top: 25200,  visited: false, explanation: "Sarah's talking to Freddie and not Alfred, his real lover." },
-  { id: 6, top: 27800,  visited: false, explanation: "In this scene, it's truly Alfred, and therefore the love is authentic." },
-  { id: 7, top: 28600,  visited: false, explanation: "Alfred asks his twin to assure Sarah that he loves her." },
-  { id: 8, top: 29300, bottom: 30000, visited: false, explanation: "Sarah talks to Freddie, who doesn't love her, but she is unaware of it." },
+  { id: 4, top: 16600, visited: false, explanation: "Sarah was actually talking to Freddie when he said 'no'."},
+  { id: 5, top: 18300, visited: false, explanation: "Alfred himself tells Root that he uses a double in his trick." },
+  { id: 6, top: 25200,  visited: false, explanation: "Sarah's talking to Freddie and not Alfred, his real lover." },
+  { id: 7, top: 27800,  visited: false, explanation: "In this scene, it's truly Alfred, and therefore the love is authentic." },
+  { id: 8, top: 28600,  visited: false, explanation: "Alfred asks his twin to assure Sarah that he loves her." },
+  { id: 9, top: 29300, bottom: 30000, visited: false, explanation: "Sarah talks to Freddie, who doesn't love her, but she is unaware of it." },
 ];
 
 
@@ -353,7 +312,7 @@ function onScroll() {
   if (currentScrollY > previousScrollY) {
     direction = "down";
     checkPoints();
-    if((currentScrollY >= points[0].top) && (currentScrollY < points[8].bottom)){
+    if((currentScrollY >= points[0].top) && (currentScrollY < points[9].bottom)){
       explainCounterElement.classList.add('show');
     }
     else {
@@ -457,10 +416,10 @@ function updateCounter() {
     else if (currentScrollY < points[0].top) {
       explainCounterElement.classList.remove('show');
     } 
-    else if (currentScrollY <= points[8].bottom) {
+    else if (currentScrollY <= points[9].bottom) {
       explainCounterElement.classList.add('show');
     } 
-    else if (currentScrollY > points[8].bottom) {
+    else if (currentScrollY > points[9].bottom) {
       explainCounterElement.classList.add('show');
     } 
     // Verifica se un nuovo punto è stato raggiunto
