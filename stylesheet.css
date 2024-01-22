@@ -147,6 +147,7 @@ body {
     opacity: 1;
 }
 
+
 /* STILE CERCHIO*/
 #movingCircle {
     fill: rgb(247, 2, 2);
@@ -239,6 +240,7 @@ align-items: center;
     font-size: 40px;
     color:white;
     line-height: 40px;
+    z-index: 999;
 }
 .blacktx {
     font-family: LoewNextRegular;
@@ -246,6 +248,7 @@ align-items: center;
     font-size: 40px;
     color:black;
     line-height: 40px;
+    z-index: 999;
 }
 
 .julia {
@@ -462,6 +465,7 @@ position: relative;
     font-family: LoewNextBold;
   }
   
+  /* PALLINA RIMBALZINA */
   .bounce {
     position: relative;
     top: 1550px;
@@ -494,3 +498,21 @@ position: relative;
     }
 }
 
+/* HOVER LINEE */
+.svg-path {
+    fill: none;
+    cursor: pointer;
+}
+
+.hover-rectangle {
+    position: fixed;
+    padding: 5px;
+    border-radius: 5px;
+    display: none;
+    pointer-events: none; /* Allow clicking through the rectangles to the SVG paths */
+    color: white;
+    font-family: LoewNextBold;
+    font-size: 20px;
+    z-index: 999;
+
+}
